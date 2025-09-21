@@ -88,6 +88,17 @@ def detect_directories():
         if os.path.exists(directory):
             good_dir.append(directory)
             continue
+    
+    a = f"{red}[!] Paths/Directories not Found Error:"
+    print(a, "\n", "-" * len(a))
+    for broken_path in broken_dir:
+        print(f"{red}[-] ", broken_path)
+    
+    print()
+    a = f"{d_green}[*]{b_green} Paths/Directories Found:"
+    print(a, "\n", "-" * len(a))
+    for good_path in good_dir:
+        print(f"{d_green}[+]{b_green} ", good_path)
 
 def main():
     for directory in directory_list:
