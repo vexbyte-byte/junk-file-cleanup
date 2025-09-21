@@ -5,7 +5,14 @@ from datetime import datetime
 from send2trash import send2trash as delete
 
 # base:
-"/storage/emulated/0/"
+SEARCH_ROOT = r"/storage/emulated/0"
+
+# define variables
+red = "\033[91m"
+b_green = "\033[92m"
+d_green = "\033[32m"
+b_yellow = "\033[93m"
+d_yellow = "\033[33m"
 
 # list of directories to clean
 directory_list = [ # you can add more
@@ -71,12 +78,6 @@ directory_list = [ # you can add more
     r"/storage/emulated/0/Pictures/stickers_renamed",
 ]
 
-# define variables
-red = "\033[91m"
-b_green = "\033[92m"
-d_green = "\033[32m"
-b_yellow = "\033[93m"
-d_yellow = "\033[33m"
 
 def detect_directories():
     broken_dir = []
@@ -99,6 +100,7 @@ def detect_directories():
     print(a, "\n", "-" * len(a))
     for good_path in good_dir:
         print(f"{d_green}[+]{b_green} ", good_path)
+
 
 def main():
     for directory in directory_list:
@@ -130,6 +132,19 @@ def main():
 
     print(f"\n{d_green}[+]{b_green} Cleanup Complete!\n")
 
+
+def find_nomedia(root_path):
+    """Recursively walk through root_path and print all .nomedia files."""
+    for dirpath, dirnames, filenames in os.walk(root_path):
+        for name in filenames:
+            if name == ".nomedia":
+                print(os.path.join(dirpath, name))
+
+
+
 if __name__ == "__main__":
     # main()
-    detect_directories()
+    # detect_directories()
+    print(f"Searching for .nomedia under: {SEARCH_ROOT}\n")
+    find_nomedia(SEARCH_ROOT)
+    print("\nSearch complete.")
