@@ -138,7 +138,9 @@ def find_nomedia(root_path):
     for dirpath, dirnames, filenames in os.walk(root_path):
         for name in filenames:
             if name == ".nomedia":
-                print(os.path.join(dirpath, name))
+                nomedia_path = os.path.join(dirpath, name)
+                if nomedia_path not in directory_list():
+                    print(f"{b_green}[+] {nomedia_path}")
 
 
 
