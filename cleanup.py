@@ -1,8 +1,9 @@
 # android junk file remover
 
 import os
+import shutil
 from datetime import datetime
-from send2trash import send2trash as delete
+# from send2trash import send2trash as delete
 
 # base:
 SEARCH_ROOT = r"/storage/emulated/0"
@@ -133,19 +134,22 @@ def main():
 
                 # Delete files only
                 if os.path.isfile(file_path):
-                    delete(file_path)
-                    print(f"{b_green}[{d_yellow}{formatted_time}{b_green}] Successfully Removed: {file_path}")
+                    try:
+                        os.remove(file_path)
+                        print(f"{b_green}[{d_yellow}{formatted_time}{b_green}] Successfully Removed: {file_path}")
+                    except Exception as e:
+                        print(f"{red}[!] ", e)
 
                 # Delete empty directories
                 elif os.path.isdir(file_path):
                     try:
-                        delete(file_path)  # only works if empty
+                        shutil.rmtree(file_path)  # only works if empty
                         print(f"{b_green}[{d_yellow}{formatted_time}{b_green}] Successfully Removed Empty Dir: {file_path}")
                     except OSError:
                         print(f"{b_green}[{d_yellow}{formatted_time}{b_green}] Skipped Non-Empty Dir: {file_path}")
 
             except Exception as e:
-                print(f"{red}[!] Error removing {file_path}: {e}")
+                print(f"{red}[!] ", e)
 
     print(f"\n{d_green}[+]{b_green} Cleanup Complete!\n")
 
