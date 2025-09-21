@@ -78,6 +78,17 @@ d_green = "\033[32m"
 b_yellow = "\033[93m"
 d_yellow = "\033[33m"
 
+def detect_directories():
+    broken_dir = []
+    good_dir = []
+    for directory in directory_list:
+        if not os.path.exists(directory):
+            broken_dir.append(directory)
+            continue
+        if os.path.exists(directory):
+            good_dir.append(directory)
+            continue
+
 def main():
     for directory in directory_list:
         if not os.path.exists(directory):
@@ -109,4 +120,5 @@ def main():
     print(f"\n{d_green}[+]{b_green} Cleanup Complete!\n")
 
 if __name__ == "__main__":
-    main()
+    # main()
+    detect_directories()
