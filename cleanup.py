@@ -96,86 +96,9 @@ directory_list = [ # you can add more
 
 ]
 
-
-def detect_directories():
-    broken_dir = []
-    good_dir = []
-    for directory in directory_list:
-        if not os.path.exists(directory):
-            broken_dir.append(directory)
-            continue
-        if os.path.exists(directory):
-            good_dir.append(directory)
-            continue
-    
-    a = f"{red}[!] Paths/Directories not Found Error:"
-    print(a, "\n", "-" * len(a))
-    for broken_path in broken_dir:
-        print(f"{red}[-] ", broken_path)
-    
-    print()
-    a = f"{d_green}[*]{b_green} Paths/Directories Found:"
-    print(a, "\n", "-" * len(a))
-    for good_path in good_dir:
-        print(f"{d_green}[+]{b_green} ", good_path)
-
-
-def main():
-    for directory in directory_list:
-        if not os.path.exists(directory):
-            print(f"{red}[!] Directory does not exist: {directory}")
-            continue # skip if file not found
-
-        for file_name in os.listdir(directory):
-            file_path = os.path.join(directory, file_name)
-            try:
-                now = datetime.now()
-                formatted_time = now.strftime("%H:%M:%S")
-
-                # Delete files only
-                if os.path.isfile(file_path):
-                    try:
-                        os.remove(file_path)
-                        print(f"{b_green}[{d_yellow}{formatted_time}{b_green}] Successfully Removed: {file_path}")
-                    except Exception as e:
-                        print(f"{red}[!] ", e)
-
-                # Delete empty directories
-                elif os.path.isdir(file_path):
-                    try:
-                        shutil.rmtree(file_path)  # only works if empty
-                        print(f"{b_green}[{d_yellow}{formatted_time}{b_green}] Successfully Removed Empty Dir: {file_path}")
-                    except OSError:
-                        print(f"{b_green}[{d_yellow}{formatted_time}{b_green}] Skipped Non-Empty Dir: {file_path}")
-
-            except Exception as e:
-                print(f"{red}[!] ", e)
-
-    print(f"\n{d_green}[+]{b_green} Cleanup Complete!\n")
-
-
-def find_nomedia(root_path):
-    print(f"{b_green}[*]{d_green} Searching for .nomedia under: {SEARCH_ROOT}\n")
-    """Recursively walk through root_path and print all .nomedia files."""
-    for dirpath, dirnames, filenames in os.walk(root_path):
-        for name in filenames:
-            if name == ".nomedia":
-                nomedia_path = os.path.join(dirpath, name)
-                if nomedia_path not in directory_list:
-                    print(f"{b_green}[+]{d_green} {nomedia_path}")
-    print(f"\n{b_green}[+]{d_green} Search complete.")
-    
-
-def sanitize():
-    text = "[+] /storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Audio/Sent/.nomedia [+] /storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Audio/Private/.nomedia [+] /storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp AI Media/.nomedia [+] /storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Animated Gifs/Sent/.nomedia [+] /storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Animated Gifs/Private/.nomedia [+] /storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Voice Notes/.nomedia [+] /storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/.Links/.nomedia [+] /storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/.Statuses/.nomedia [+] /storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/.udDHFY8K4Eqg/.nomedia [+] /storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Backup Excluded Stickers/.nomedia [+] /storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Bug Report Attachments/.nomedia [+] /storage/emulated/0/Android/media/com.whatsapp/WhatsApp/.Shared/.nomedia [+] /storage/emulated/0/Android/.Trash/com.sec.android.app.myfiles/.nomedia [+] /storage/emulated/0/Android/.Trash/com.sec.android.app.myfiles/11b3e3d6-43e3-4a6b-b4dd-441f6036b93bT3/1758423551688/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Backup Excluded Stickers/.!%#@$/.nomedia"
-    paths = [p.strip() for p in text.split("[+]") if p.strip()]
-    lists = []
-    for i in paths:
-        lists.append(i)
-    print(lists)
-
-def logo():
-    text = r"""
+class utils():
+    def logo():
+        text = r"""
      ________  ___       _______   ________  ________   ___  ___  ________   
     |\   ____\|\  \     |\  ___ \ |\   __  \|\   ___  \|\  \|\  \|\   __  \  
     \ \  \___|\ \  \    \ \   __/|\ \  \|\  \ \  \\ \  \ \  \\\  \ \  \|\  \ 
@@ -184,47 +107,145 @@ def logo():
        \ \_______\ \_______\ \_______\ \__\ \__\ \__\\ \__\ \_______\ \__\   
         \|_______|\|_______|\|_______|\|__|\|__|\|__| \|__|\|_______|\|__|                                                          
     """
-    print(text)
-    print()
-
-def selection():
-    while True:
-        # list menu
-        # input
-        logo()
-        print(f"{b_green}[{d_yellow}01{b_green}]{d_green} Search for .nomedia files that aren't included in database")
-        print(f"{b_green}[{d_yellow}02{b_green}]{d_green} Search for broken directories in database")
-        print(f"{b_green}[{d_yellow}03{b_green}]{d_green} Remove junk files")
-        print(red)
+        print(text)
         print()
-        choice = str(input(f"[Main Menu] > {d_yellow}"))
-        clear_screen()
-        logo()
-        # filter
-        if choice.startswith("0") and len(choice) > 1:
-            choice = choice[-1]
+
+    def selection():
+        while True:
+            # list menu
+            # input
+            utils.logo()
+            print(f"{b_green}[{d_yellow}01{b_green}]{d_green} Search for .nomedia files that aren't included in database")
+            print(f"{b_green}[{d_yellow}02{b_green}]{d_green} Search for broken directories in database")
+            print(f"{b_green}[{d_yellow}03{b_green}]{d_green} Remove junk files")
+            print(red)
+            print()
+            choice = str(input(f"[Main Menu] > {d_yellow}"))
+            utils.clear_screen()
+            utils.logo()
+            # filter
+            if choice.startswith("0") and len(choice) > 1:
+                choice = choice[-1]
+            
+            options = {
+                "1": "engine.find_nomedia(SEARCH_ROOT)",
+                "2": "engine.detect_directories()",
+                "3": "engine.main()"
+            }
+
+            try:
+                value = options.get(choice)
+                exec(value)
+            except:
+                utils.clear_screen()
+                continue
+            input()
+            utils.clear_screen()
+
+
+    def clear_screen():
+        try:
+            os.system("cls" if os.name == "nt" else "clear")
+            print("\033c\033[0m", end="")
+        except Exception as e:
+            pass
+
+class engine():
+    def detect_directories():
+        broken_dir = []
+        good_dir = []
+        for directory in directory_list:
+            if not os.path.exists(directory):
+                broken_dir.append(directory)
+                continue
+            if os.path.exists(directory):
+                good_dir.append(directory)
+                continue
         
-        options = {
-            "1": "find_nomedia(SEARCH_ROOT)",
-            "2": "detect_directories()",
-            "3": "main()"
-        }
+        a = f"{red}[!] Paths/Directories not Found Error:"
+        print(a, "\n", "-" * len(a))
+        for broken_path in broken_dir:
+            print(f"{red}[-] ", broken_path)
+        
+        print()
+        a = f"{d_green}[*]{b_green} Paths/Directories Found:"
+        print(a, "\n", "-" * len(a))
+        for good_path in good_dir:
+            print(f"{d_green}[+]{b_green} ", good_path)
 
-        value = options.get(choice)
-        exec(value)
-        input()
-        clear_screen()
+
+    def main():
+        # variables
+        deleted_items = []
+        total_items = len(directory_list)
+        file_deleted_count = 0
+        folder_deleted_count = 0
+
+        for directory in directory_list:
+            if not os.path.exists(directory):
+                print(f"{red}[!] Directory does not exist: {directory}")
+                continue # skip if file not found
+
+            # for file_name in os.listdir(directory):
+            # file_path = os.path.join(directory, file_name)
+            try:
+                now = datetime.now()
+                formatted_time = now.strftime("%H:%M:%S")
+
+                # Delete files only
+                if os.path.isfile(directory):
+                    try:
+                        os.remove(directory)
+                        print(f"{b_green}[{d_yellow}{formatted_time}{b_green}] Successfully Removed: {directory}")
+                        file_deleted_count += 1
+                    except Exception as e:
+                        print(f"{red}[!] ", e)
+
+                # Delete empty directories
+                elif os.path.isdir(directory):
+                    try:
+                        shutil.rmtree(directory)
+                        print(f"{b_green}[{d_yellow}{formatted_time}{b_green}] Successfully Removed Empty Dir: {directory}")
+                        folder_deleted_count += 1
+                    except Exception as e:
+                        print(f"{red}[!] ", e)
+                try:
+                    percentage = (len(deleted_items)/total_items) * 100
+                except:
+                    pass
+
+                print("\n")
+                print(percentage.ljust(30), f"Files deleted: {file_deleted_count}".ljust(30), f"Folders Deleted: {folder_deleted_count}")
+
+            except Exception as e:
+                print(f"{red}[!] ", e)
+
+        print(f"\n{d_green}[+]{b_green} Cleanup Complete!\n")
 
 
-def clear_screen():
-    try:
-        os.system("cls" if os.name == "nt" else "clear")
-        print("\033c\033[0m", end="")
-    except Exception as e:
-    	pass
+    def find_nomedia(root_path):
+        print(f"{b_green}[*]{d_green} Searching for .nomedia under: {SEARCH_ROOT}\n")
+        """Recursively walk through root_path and print all .nomedia files."""
+        for dirpath, dirnames, filenames in os.walk(root_path):
+            for name in filenames:
+                if name == ".nomedia":
+                    nomedia_path = os.path.join(dirpath, name)
+                    if nomedia_path not in directory_list:
+                        print(f"{b_green}[+]{d_green} {nomedia_path}")
+        print(f"\n{b_green}[+]{d_green} Search complete.")
+        
+
+    def sanitize():
+        text = "[+] /storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Audio/Sent/.nomedia [+] /storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Audio/Private/.nomedia [+] /storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp AI Media/.nomedia [+] /storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Animated Gifs/Sent/.nomedia [+] /storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Animated Gifs/Private/.nomedia [+] /storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Voice Notes/.nomedia [+] /storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/.Links/.nomedia [+] /storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/.Statuses/.nomedia [+] /storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/.udDHFY8K4Eqg/.nomedia [+] /storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Backup Excluded Stickers/.nomedia [+] /storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Bug Report Attachments/.nomedia [+] /storage/emulated/0/Android/media/com.whatsapp/WhatsApp/.Shared/.nomedia [+] /storage/emulated/0/Android/.Trash/com.sec.android.app.myfiles/.nomedia [+] /storage/emulated/0/Android/.Trash/com.sec.android.app.myfiles/11b3e3d6-43e3-4a6b-b4dd-441f6036b93bT3/1758423551688/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Backup Excluded Stickers/.!%#@$/.nomedia"
+        paths = [p.strip() for p in text.split("[+]") if p.strip()]
+        lists = []
+        for i in paths:
+            lists.append(i)
+        print(lists)
+
 
 
 if __name__ == "__main__":
-    clear_screen()
-    selection()
+    utils.clear_screen()
+    utils.selection()
 
