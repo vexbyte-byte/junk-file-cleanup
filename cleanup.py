@@ -215,10 +215,10 @@ class engine():
                     pass
 
                 print("\n")
-                print(percentage.ljust(30), f"Files deleted: {file_deleted_count}".ljust(30), f"Folders Deleted: {folder_deleted_count}")
+                print(f"{percentage}".ljust(30), f"Files deleted: {file_deleted_count}".ljust(30), f"Folders Deleted: {folder_deleted_count}")
 
             except Exception as e:
-                print(f"{red}[!] ", e)
+                print(f"{red}[{formatted_time}] ", e)
 
         print(f"\n{d_green}[+]{b_green} Cleanup Complete!\n")
 
