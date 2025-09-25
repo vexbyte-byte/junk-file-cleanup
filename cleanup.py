@@ -213,16 +213,16 @@ class engine():
                     except Exception as e:
                         print(f"{red}[{formatted_time}] ", e)
                 try:
-                    percentage = (int(len(deleted_items))/total_items) * 100
+                    percentage = (int(len(deleted_items))/total_items) * 100 # total_items is already integer
                     elapsed_time = time.time() - initial_time
                 except:
                     pass
 
                 print(f"{b_green}\n")
-                print(f"{b_green}Cleaning Up".ljust(var_1) + f"{d_green}:".ljust(var_2) + percentage)
-                print(f"{b_green}Files deleted".ljust(var_1) + f"{d_green}:".ljust(var_2) + file_deleted_count)
-                print(f"{b_green}Folders Deleted".ljust(var_1) + f"{d_green}:".ljust(var_2) + folder_deleted_count)
-                print(f"{b_green}Time Taken (Seconds)".ljust(var_1) + f"{d_green}:".ljust(var_2) + int(round(elapsed_time)))
+                print(f"{b_green}Cleaning Up".ljust(var_1), f"{d_green}:".ljust(var_2), int(round(percentage)))
+                print(f"{b_green}Files deleted".ljust(var_1), f"{d_green}:".ljust(var_2), int(file_deleted_count))
+                print(f"{b_green}Folders Deleted".ljust(var_1), f"{d_green}:".ljust(var_2), int(folder_deleted_count))
+                print(f"{b_green}Time Taken (Seconds)".ljust(var_1), f"{d_green}:".ljust(var_2), int(round(elapsed_time)))
                 
             except Exception as e:
                 print(f"{red}[{formatted_time}] ", e)
