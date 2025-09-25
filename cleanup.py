@@ -185,7 +185,7 @@ class engine():
         global failed_items
         global folder_deleted_count
         global file_deleted_count
-        
+
         for directory in directory_list:
             try:
                 if not os.path.exists(directory):
@@ -232,8 +232,6 @@ class engine():
         # variables
         initial_time = time.time()
         var_1, var_2, var_3 = 30,10,20
-        print(len(directory_list))
-        os.system('pause')
         total_items = int(len(directory_list))
 
         # delete files
@@ -257,8 +255,16 @@ class engine():
             try:
                 percentage = (file_deleted_count + folder_deleted_count - failed_items) / total_items * 100
                 elapsed_time = time.time() - initial_time
-            except:
-                pass
+
+                # print
+                print(f"{b_green}\n")
+                print("".ljust(var_3), f"{b_green}Cleaning Up".ljust(var_1), f"{d_green}:".ljust(var_2), f"{int(round(percentage))}%")
+                print("".ljust(var_3), f"{b_green}Files deleted".ljust(var_1), f"{d_green}:".ljust(var_2), int(file_deleted_count))
+                print("".ljust(var_3), f"{b_green}Folders Deleted".ljust(var_1), f"{d_green}:".ljust(var_2), int(folder_deleted_count))
+                print("".ljust(var_3), f"{b_green}Time Taken (Seconds)".ljust(var_1), f"{d_green}:".ljust(var_2), int(round(elapsed_time)))
+                
+            except Exception as e:
+                print(f"{red}[{formatted_time}] ", e)
 
         # Delete folders
         for directory in folders_list:
