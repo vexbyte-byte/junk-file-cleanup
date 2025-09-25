@@ -258,21 +258,20 @@ class engine():
             try:
                 percentage = progress / total_items * 100
                 elapsed_time = time.time() - initial_time
-
-                # format screen
-                utils.clear_screen()
-                utils.logo()
-
+                
                 # print
                 print(f"{b_green}\n")
-                print("".ljust(var_3), f"{b_green}Cleaning Up".ljust(var_1), f"{d_green}:".ljust(var_2), f"{int(round(percentage))}%", flush=True)
-                print("".ljust(var_3), f"{b_green}Files deleted".ljust(var_1), f"{d_green}:".ljust(var_2), int(file_deleted_count), flush=True)
-                print("".ljust(var_3), f"{b_green}Folders Deleted".ljust(var_1), f"{d_green}:".ljust(var_2), int(folder_deleted_count), flush=True)
-                print("".ljust(var_3), f"{b_green}Time Taken (Seconds)".ljust(var_1), f"{d_green}:".ljust(var_2), int(round(elapsed_time)), flush=True)
+                print(f"{b_green}Cleaning Up".ljust(var_1), f"{d_green}:".ljust(var_2), f"{int(round(percentage))}%", flush=True)
+                print(f"{b_green}Files deleted".ljust(var_1), f"{d_green}:".ljust(var_2), int(file_deleted_count), flush=True)
+                print(f"{b_green}Folders Deleted".ljust(var_1), f"{d_green}:".ljust(var_2), int(folder_deleted_count), flush=True)
+                print(f"{b_green}Time Taken (Seconds)".ljust(var_1), f"{d_green}:".ljust(var_2), int(round(elapsed_time)), flush=True)
                 
             except Exception as e:
                 print(f"{red}[{formatted_time}] ", e)
-            
+                        
+            # format screen
+            utils.clear_screen()
+            utils.logo()
 
         # Delete folders
         for directory in folders_list:
@@ -296,20 +295,19 @@ class engine():
                 percentage = progress / total_items * 100
                 elapsed_time = time.time() - initial_time
 
-                # format screen
-                utils.clear_screen()
-                utils.logo()
-
                 # print
                 print(f"{b_green}\n")
-                print("".ljust(var_3), f"{b_green}Cleaning Up".ljust(var_1), f"{d_green}:".ljust(var_2), f"{int(round(percentage))}%", flush=True)
-                print("".ljust(var_3), f"{b_green}Files deleted".ljust(var_1), f"{d_green}:".ljust(var_2), int(file_deleted_count), flush=True)
-                print("".ljust(var_3), f"{b_green}Folders Deleted".ljust(var_1), f"{d_green}:".ljust(var_2), int(folder_deleted_count), flush=True)
-                print("".ljust(var_3), f"{b_green}Time Taken (Seconds)".ljust(var_1), f"{d_green}:".ljust(var_2), int(round(elapsed_time)), flush=True)
+                print(f"{b_green}Cleaning Up".ljust(var_1), f"{d_green}:".ljust(var_2), f"{int(round(percentage))}%", flush=True)
+                print(f"{b_green}Files deleted".ljust(var_1), f"{d_green}:".ljust(var_2), int(file_deleted_count), flush=True)
+                print(f"{b_green}Folders Deleted".ljust(var_1), f"{d_green}:".ljust(var_2), int(folder_deleted_count), flush=True)
+                print(f"{b_green}Time Taken (Seconds)".ljust(var_1), f"{d_green}:".ljust(var_2), int(round(elapsed_time)), flush=True)
                 
             except Exception as e:
                 print(f"{red}[{formatted_time}] ", e)
             
+            # format screen
+            utils.clear_screen()
+            utils.logo()
 
         print(f"\n{d_green}[+]{b_green} Cleanup Complete!\n")
 
