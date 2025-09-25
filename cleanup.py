@@ -181,7 +181,11 @@ class engine():
             print(f"{d_green}[+]{b_green} ", good_path)
     
     def filter_directories():
+        # globals
         global failed_items
+        global folder_deleted_count
+        global file_deleted_count
+        
         for directory in directory_list:
             try:
                 if not os.path.exists(directory):
@@ -220,8 +224,12 @@ class engine():
         temp_directory_list.clear()
 
     def main():
-        # variables
+        # globals
         global failed_items
+        global folder_deleted_count
+        global file_deleted_count
+
+        # variables
         initial_time = time.time()
         var_1, var_2, var_3 = 30,10,20
         print(len(directory_list))
