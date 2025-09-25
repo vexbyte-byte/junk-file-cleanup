@@ -245,7 +245,7 @@ class engine():
                 continue # skip if file not found
             
             try:
-                # os.remove(directory)
+                os.remove(directory)
                 print(f"{b_green}[{d_yellow}{formatted_time}{b_green}] Successfully Removed: {directory}")
                 file_deleted_count += 1
             except Exception as e:
@@ -269,7 +269,7 @@ class engine():
         # Delete folders
         for directory in folders_list:
             try:
-                # shutil.rmtree(directory)
+                shutil.rmtree(directory)
                 print(f"{b_green}[{d_yellow}{formatted_time}{b_green}] Successfully Removed Empty Dir: {directory}")
                 folder_deleted_count += 1
             except Exception as e:
