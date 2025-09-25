@@ -233,7 +233,7 @@ class engine():
 
         # variables
         initial_time = time.time()
-        var_1, var_2, var_3 = 30,10,20
+        var_1, var_2, var_3, var_4 = 30,10,20,20
         total_items = int(len(directory_list))
 
         # delete files
@@ -244,12 +244,12 @@ class engine():
             # i know i already had this check earlier
             # but it doesnt mean a path would continue to be present during runtime
             if not os.path.exists(directory):
-                print(f"{red}[{formatted_time}] Directory does not exist: {directory[-20:]}")
+                print(f"{red}[{formatted_time}] Directory does not exist: {directory[-var_4:]}")
                 continue # skip if file not found
             
             try:
                 os.remove(directory)
-                print(f"{b_green}[{d_yellow}{formatted_time}{b_green}] Successfully Removed: {directory}")
+                print(f"{b_green}[{d_yellow}{formatted_time}{b_green}] Successfully Removed: {directory[-var_4:]}")
                 file_deleted_count += 1
             except Exception as e:
                 print(f"{red}[{formatted_time}] ", e)
@@ -259,17 +259,19 @@ class engine():
                 percentage = progress / total_items * 100
                 elapsed_time = time.time() - initial_time
 
+                # format screen
+                utils.clear_screen()
+                utils.logo()
+
                 # print
                 print(f"{b_green}\n")
-                print("".ljust(var_3), f"{b_green}Cleaning Up".ljust(var_1), f"{d_green}:".ljust(var_2), f"{int(round(percentage))}%")
-                print("".ljust(var_3), f"{b_green}Files deleted".ljust(var_1), f"{d_green}:".ljust(var_2), int(file_deleted_count))
-                print("".ljust(var_3), f"{b_green}Folders Deleted".ljust(var_1), f"{d_green}:".ljust(var_2), int(folder_deleted_count))
-                print("".ljust(var_3), f"{b_green}Time Taken (Seconds)".ljust(var_1), f"{d_green}:".ljust(var_2), int(round(elapsed_time)))
+                print("".ljust(var_3), f"{b_green}Cleaning Up".ljust(var_1), f"{d_green}:".ljust(var_2), f"{int(round(percentage))}%", flush=True)
+                print("".ljust(var_3), f"{b_green}Files deleted".ljust(var_1), f"{d_green}:".ljust(var_2), int(file_deleted_count), flush=True)
+                print("".ljust(var_3), f"{b_green}Folders Deleted".ljust(var_1), f"{d_green}:".ljust(var_2), int(folder_deleted_count), flush=True)
+                print("".ljust(var_3), f"{b_green}Time Taken (Seconds)".ljust(var_1), f"{d_green}:".ljust(var_2), int(round(elapsed_time)), flush=True)
                 
             except Exception as e:
                 print(f"{red}[{formatted_time}] ", e)
-            utils.clear_screen()
-            utils.logo
             
 
         # Delete folders
@@ -279,12 +281,12 @@ class engine():
             formatted_time = now.strftime("%H:%M:%S")
 
             if not os.path.exists(directory):
-                print(f"{red}[{formatted_time}] Directory does not exist: {directory[-20:]}")
+                print(f"{red}[{formatted_time}] Directory does not exist: {directory[-var_4:]}")
                 continue # skip if file not found
 
             try:
                 shutil.rmtree(directory)
-                print(f"{b_green}[{d_yellow}{formatted_time}{b_green}] Successfully Removed Empty Dir: {directory}")
+                print(f"{b_green}[{d_yellow}{formatted_time}{b_green}] Successfully Removed Empty Dir: {directory[-var_4:]}")
                 folder_deleted_count += 1
             except Exception as e:
                 print(f"{red}[{formatted_time}] ", e)
@@ -294,17 +296,19 @@ class engine():
                 percentage = progress / total_items * 100
                 elapsed_time = time.time() - initial_time
 
+                # format screen
+                utils.clear_screen()
+                utils.logo()
+
                 # print
                 print(f"{b_green}\n")
-                print("".ljust(var_3), f"{b_green}Cleaning Up".ljust(var_1), f"{d_green}:".ljust(var_2), f"{int(round(percentage))}%")
-                print("".ljust(var_3), f"{b_green}Files deleted".ljust(var_1), f"{d_green}:".ljust(var_2), int(file_deleted_count))
-                print("".ljust(var_3), f"{b_green}Folders Deleted".ljust(var_1), f"{d_green}:".ljust(var_2), int(folder_deleted_count))
-                print("".ljust(var_3), f"{b_green}Time Taken (Seconds)".ljust(var_1), f"{d_green}:".ljust(var_2), int(round(elapsed_time)))
+                print("".ljust(var_3), f"{b_green}Cleaning Up".ljust(var_1), f"{d_green}:".ljust(var_2), f"{int(round(percentage))}%", flush=True)
+                print("".ljust(var_3), f"{b_green}Files deleted".ljust(var_1), f"{d_green}:".ljust(var_2), int(file_deleted_count), flush=True)
+                print("".ljust(var_3), f"{b_green}Folders Deleted".ljust(var_1), f"{d_green}:".ljust(var_2), int(folder_deleted_count), flush=True)
+                print("".ljust(var_3), f"{b_green}Time Taken (Seconds)".ljust(var_1), f"{d_green}:".ljust(var_2), int(round(elapsed_time)), flush=True)
                 
             except Exception as e:
                 print(f"{red}[{formatted_time}] ", e)
-            utils.clear_screen()
-            utils.logo
             
 
         print(f"\n{d_green}[+]{b_green} Cleanup Complete!\n")
