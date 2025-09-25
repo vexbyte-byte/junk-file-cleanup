@@ -176,10 +176,9 @@ class engine():
 
 
     def main():
-        initial_time = time.time()
-        var_1 = 20
-        var_2 = 10
         # variables
+        initial_time = time.time()
+        var_1, var_2, var_3 = 30,10,20
         deleted_items = []
         total_items = int(len(directory_list))
         file_deleted_count = 0
@@ -219,10 +218,10 @@ class engine():
                     pass
 
                 print(f"{b_green}\n")
-                print(f"{b_green}Cleaning Up".ljust(var_1), f"{d_green}:".ljust(var_2), int(round(percentage)))
-                print(f"{b_green}Files deleted".ljust(var_1), f"{d_green}:".ljust(var_2), int(file_deleted_count))
-                print(f"{b_green}Folders Deleted".ljust(var_1), f"{d_green}:".ljust(var_2), int(folder_deleted_count))
-                print(f"{b_green}Time Taken (Seconds)".ljust(var_1), f"{d_green}:".ljust(var_2), int(round(elapsed_time)))
+                print("".ljust(var_3), f"{b_green}Cleaning Up".ljust(var_1), f"{d_green}:".ljust(var_2), int(round(percentage)), "%")
+                print("".ljust(var_3), f"{b_green}Files deleted".ljust(var_1), f"{d_green}:".ljust(var_2), int(file_deleted_count))
+                print("".ljust(var_3), f"{b_green}Folders Deleted".ljust(var_1), f"{d_green}:".ljust(var_2), int(folder_deleted_count))
+                print("".ljust(var_3), f"{b_green}Time Taken (Seconds)".ljust(var_1), f"{d_green}:".ljust(var_2), int(round(elapsed_time)))
                 
             except Exception as e:
                 print(f"{red}[{formatted_time}] ", e)
