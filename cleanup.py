@@ -1,6 +1,7 @@
 # android junk file remover
 
 import os
+import time
 import shutil
 from datetime import datetime
 # from send2trash import send2trash as delete
@@ -175,48 +176,54 @@ class engine():
 
 
     def main():
+        initial_time = time.time()
+        var_1 = 20
+        var_2 = 10
         # variables
         deleted_items = []
-        total_items = len(directory_list)
+        total_items = int(len(directory_list))
         file_deleted_count = 0
         folder_deleted_count = 0
 
         for directory in directory_list:
+            now = datetime.now()
+            formatted_time = now.strftime("%H:%M:%S")
             if not os.path.exists(directory):
-                print(f"{red}[!] Directory does not exist: {directory}")
+                print(f"{red}[{formatted_time}] Directory does not exist: {directory[-20:]}")
                 continue # skip if file not found
 
             # for file_name in os.listdir(directory):
             # file_path = os.path.join(directory, file_name)
             try:
-                now = datetime.now()
-                formatted_time = now.strftime("%H:%M:%S")
-
                 # Delete files only
                 if os.path.isfile(directory):
                     try:
-                        os.remove(directory)
+                        # os.remove(directory)
                         print(f"{b_green}[{d_yellow}{formatted_time}{b_green}] Successfully Removed: {directory}")
                         file_deleted_count += 1
                     except Exception as e:
-                        print(f"{red}[!] ", e)
+                        print(f"{red}[{formatted_time}] ", e)
 
                 # Delete empty directories
                 elif os.path.isdir(directory):
                     try:
-                        shutil.rmtree(directory)
+                        # shutil.rmtree(directory)
                         print(f"{b_green}[{d_yellow}{formatted_time}{b_green}] Successfully Removed Empty Dir: {directory}")
                         folder_deleted_count += 1
                     except Exception as e:
-                        print(f"{red}[!] ", e)
+                        print(f"{red}[{formatted_time}] ", e)
                 try:
-                    percentage = (len(deleted_items)/total_items) * 100
+                    percentage = (int(len(deleted_items))/total_items) * 100
+                    elapsed_time = time.time() - initial_time
                 except:
                     pass
 
-                print("\n")
-                print(f"{percentage}".ljust(30), f"Files deleted: {file_deleted_count}".ljust(30), f"Folders Deleted: {folder_deleted_count}")
-
+                print(f"{b_green}\n")
+                print(f"{b_green}Cleaning Up".ljust(var_1) + f"{d_green}:".ljust(var_2) + percentage)
+                print(f"{b_green}Files deleted".ljust(var_1) + f"{d_green}:".ljust(var_2) + file_deleted_count)
+                print(f"{b_green}Folders Deleted".ljust(var_1) + f"{d_green}:".ljust(var_2) + folder_deleted_count)
+                print(f"{b_green}Time Taken (Seconds)".ljust(var_1) + f"{d_green}:".ljust(var_2) + int(round(elapsed_time)))
+                
             except Exception as e:
                 print(f"{red}[{formatted_time}] ", e)
 
