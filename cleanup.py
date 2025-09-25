@@ -16,6 +16,7 @@ d_yellow = "\033[33m"
 file_deleted_count = 0
 folder_deleted_count = 0
 failed_items = 0
+progress = 0
 
 # list of directories to clean
 temp_directory_list = []
@@ -228,6 +229,7 @@ class engine():
         global failed_items
         global folder_deleted_count
         global file_deleted_count
+        global progress
 
         # variables
         initial_time = time.time()
@@ -236,6 +238,7 @@ class engine():
 
         # delete files
         for directory in files_list:
+            progress += 1
             now = datetime.now()
             formatted_time = now.strftime("%H:%M:%S")
             # i know i already had this check earlier
@@ -253,7 +256,7 @@ class engine():
             
             # calculate percentage
             try:
-                percentage = (file_deleted_count + folder_deleted_count - failed_items) / total_items * 100
+                percentage = progress / total_items * 100
                 elapsed_time = time.time() - initial_time
 
                 # print
@@ -265,9 +268,20 @@ class engine():
                 
             except Exception as e:
                 print(f"{red}[{formatted_time}] ", e)
+            utils.clear_screen()
+            utils.logo
+            
 
         # Delete folders
         for directory in folders_list:
+            progress += 1
+            now = datetime.now()
+            formatted_time = now.strftime("%H:%M:%S")
+
+            if not os.path.exists(directory):
+                print(f"{red}[{formatted_time}] Directory does not exist: {directory[-20:]}")
+                continue # skip if file not found
+
             try:
                 shutil.rmtree(directory)
                 print(f"{b_green}[{d_yellow}{formatted_time}{b_green}] Successfully Removed Empty Dir: {directory}")
@@ -277,7 +291,7 @@ class engine():
             
             # calculate percentage
             try:
-                percentage = (file_deleted_count + folder_deleted_count - failed_items) / total_items * 100
+                percentage = progress / total_items * 100
                 elapsed_time = time.time() - initial_time
 
                 # print
@@ -289,6 +303,9 @@ class engine():
                 
             except Exception as e:
                 print(f"{red}[{formatted_time}] ", e)
+            utils.clear_screen()
+            utils.logo
+            
 
         print(f"\n{d_green}[+]{b_green} Cleanup Complete!\n")
 
