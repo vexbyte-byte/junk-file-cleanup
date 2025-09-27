@@ -3,6 +3,8 @@
 import os
 import time
 import shutil
+import requests
+import subprocess
 from datetime import datetime
 # from send2trash import send2trash as delete
 
@@ -22,85 +24,11 @@ progress = 0
 temp_directory_list = []
 files_list = []
 folders_list = []
-directory_list = [ # you can add more
-    # whatsapp junk files
-    r"/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/.Shared",
-    r"/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/.StickerThumbs",
-    r"/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/.Thumbs",
-    r"/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/.trash",
-    r"/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Backups/Stickers",
-    r"/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Backups",
-    r"/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Databases",
-    r"/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/.Links",
-    r"/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/.Statuses",
-    r"/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/.udDHFY8K4Eqg",
-    r"/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/Wallpaper",
-    r"/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp AI Media",
-    r"/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Animated Gifs",
-    r"/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Audio",
-    r"/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Backup Excluded Stickers",
-    r"/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Bug Report Attachments",
-    r"/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Documents/Sent/.nomedia",
-    r"/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Documents/Private/.nomedia",
-    r"/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Documents/Private",
-    r"/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Images/Private/.nomedia",
-    r"/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Images/Sent/.nomedia",
-    r"/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Profile Photos",
-    r"/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Sticker Packs/.nomedia",
-    r"/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Sticker Packs",
-    r"/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Stickers/.nomedia",
-    r"/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Video/Private/.nomedia",
-    r"/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Video/Sent/.nomedia",
-    r"/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Video Notes/.nomedia",
-    r"/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Video Notes",
-    r"/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Voice Notes",
-    # instagram junk files
-    r"/storage/emulated/0/Android/media/com.instagram.android",
-    # X-Recorder junk files
-    r"/storage/emulated/0/Android/media/videoeditor.videorecorder.screenrecorder",
-    # android junk files
-    r"/storage/emulated/0/Android/obb/com.avast.android.mobilesecurity",
-    r"/storage/emulated/0/Android/obb/com.sec.android.app.samsungapps",
-    r"/storage/emulated/0/Android/obb/.nomedia",
-    r"/storage/emulated/0/Ams_vault/.data/.key_store",
-    r"/storage/emulated/0/Ams_vault/.data/.metadata_store",
-    r"/storage/emulated/0/Ams_vault/.data",
-    r"/storage/emulated/0/Ams_vault/.mid_pictures",
-    r"/storage/emulated/0/Ams_vault/.thumbnail",
-    r"/storage/emulated/0/Ams_vault/pictures",
-    r"/storage/emulated/0/DCIM/Deco Pic",
-    r"/storage/emulated/0/Movies/.thumbnails/.database_uuid",
-    r"/storage/emulated/0/Movies/.thumbnails/.nomedia",
-    r"/storage/emulated/0/Movies/.thumbnails",
-    r"/storage/emulated/0/Movies/VideoGlitch/.screenCapture",
-    r"/storage/emulated/0/Movies/VideoGlitch",
-    r"/storage/emulated/0/Music/.thumbnails/.database_uuid",
-    r"/storage/emulated/0/Music/.thumbnails/.nomedia",
-    r"/storage/emulated/0/Music/.thumbnails",
-    r"/storage/emulated/0/Music",
-    r"/storage/emulated/0/Pictures/.thumbnails/.database_uuid",
-    r"/storage/emulated/0/Pictures/.thumbnails/.nomedia",
-    r"/storage/emulated/0/Pictures/.thumbnails",
-    r"/storage/emulated/0/Pictures/stickers",
-    r"/storage/emulated/0/Pictures/stickers_renamed",
+# will be loaded later using github
+directory_list = []
 
-    # nomedia files
-    r'/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Audio/Sent/.nomedia', 
-    r'/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Audio/Private/.nomedia', 
-    r'/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp AI Media/.nomedia', 
-    r'/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Animated Gifs/Sent/.nomedia', 
-    r'/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Animated Gifs/Private/.nomedia', 
-    r'/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Voice Notes/.nomedia', 
-    r'/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/.Links/.nomedia', 
-    r'/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/.Statuses/.nomedia', 
-    r'/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/.udDHFY8K4Eqg/.nomedia', 
-    r'/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Backup Excluded Stickers/.nomedia', 
-    r'/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Bug Report Attachments/.nomedia', 
-    r'/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/.Shared/.nomedia', 
-    r'/storage/emulated/0/Android/.Trash/com.sec.android.app.myfiles/11b3e3d6-43e3-4a6b-b4dd-441f6036b93bT3/1758423551688/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Backup Excluded Stickers/.!%#@$/.nomedia',
-    r'/storage/emulated/0/Android/.Trash/com.sec.android.app.myfiles/.nomedia', 
-    # r'C:\Users\Wei Jie\Documents', # debug
-]
+# will be  loaded later using github
+data = []
 
 class utils():
     def logo():
@@ -117,6 +45,7 @@ class utils():
         print()
 
     def selection():
+        global directory_list
         engine.explore_subfolders()
         engine.filter_directories()
         while True:
@@ -126,6 +55,7 @@ class utils():
             print(f"{b_green}[{d_yellow}01{b_green}]{d_green} Search for .nomedia files that aren't included in database")
             print(f"{b_green}[{d_yellow}02{b_green}]{d_green} Search for broken directories in database")
             print(f"{b_green}[{d_yellow}03{b_green}]{d_green} Remove junk files")
+            print(f"{b_green}[{d_yellow}04{b_green}]{d_green} Clear App Data Recursively (ADB)")
             print(red)
             print()
             choice = str(input(f"[Main Menu] > {d_yellow}"))
@@ -138,7 +68,8 @@ class utils():
             options = {
                 "1": engine.find_nomedia,
                 "2": engine.detect_directories,
-                "3": engine.main
+                "3": engine.main,
+                "4": engine.clear_app_data,
             }
 
             try:
@@ -332,10 +263,37 @@ class engine():
         for i in paths:
             lists.append(i)
         print(lists)
+    
+    def clear_app_data():
+        total_app = len(data)
+        progress = 0
+        for package_name in data:
+            progress += 1
+            utils.clear_screen()
+            print(f"{d_green}[*]{b_green} clearing data for: ", package_name)
+            percentage = progress / total_app * 100
+            print(f"\n\n{b_green}Percentage: {int(round(percentage))}%")
+            subprocess.run(["adb", "shell", "pm", "clear", package_name])
+        print(f"\n\n{d_green}[+]{b_green} Cleanup Complete!")
 
+class github_Api():
+    global directory_list
+    global data
+    def get_and_run_database(url):
+        try:
+            r = requests.get(url)
+            status = r.status_code
+            if status == 200: contents = r.text
+            else: print(f"{red}[!] Unable to obtain database. Status code: {status}")
+        except Exception as e: print(f"{red}[!] ", e)
+        exec(contents, globals())
 
 
 if __name__ == "__main__":
+    utils.clear_screen()
+    print(f"{d_yellow}[{red}!{d_yellow}] Initializing")
+    github_Api.get_and_run_database('https://raw.githubusercontent.com/vexbyte-byte/junk-file-cleanup/refs/heads/main/database_1')
+    github_Api.get_and_run_database('https://raw.githubusercontent.com/vexbyte-byte/junk-file-cleanup/refs/heads/main/database_3')
     utils.clear_screen()
     utils.selection()
 
