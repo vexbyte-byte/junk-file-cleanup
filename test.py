@@ -80,7 +80,577 @@ cache =[
     # Telegram
     'org.telegram.messenger.web',
     'org.telegram.messenger.DefaultIcon',
-    ]
+    # WhatsApp
+    'com.whatsapp',
+    'com.whatsapp.Main',
+    # AdGuard
+    'com.adguard.android',
+    'com.adguard.android.ui.activity.SplashActivity',
+    # Android System SafetyCore
+    'com.google.android.safetycore',
+    # VirusTotal
+    'org.chromium.webapk.a1d8342e5ce2b8837_v2',
+    'org.chromium.webapk.shell_apk.h2o.H2OOpaqueMainActivity',
+    # Avast Mobile Security
+    'com.avast.android.mobilesecurity',
+    'com.avast.android.one.base.ui.main.MainActivity',
+    # Android System Key Verifier
+    'com.google.android.contactkeys',
+    # TikTok
+    'com.ss.android.ugc.trill',
+    'com.ss.android.ugc.aweme.splash.SplashActivity',
+    # DeepSeek
+    'com.deepseek.chat',
+    'com.deepseek.chat.MainActivity',
+    # My Files
+    'com.sec.android.app.myfiles',
+    'com.sec.android.app.myfiles.external.ui.MainActivity',
+    # Storage Manager
+    'com.android.storagemanager',
+    # Print Spooler
+    'com.android.printspooler',
+    # Samsung Cloud
+    'com.samsung.android.scloud',
+    # Ad Privacy
+    'com.google.android.adservices.api',
+    # Group Sharing
+    'com.samsung.android.mobileservice',
+    # Samsung Cloud Assistant
+    'com.samsung.android.scpm',
+    'android.auto_generated_rro_vendor__',
+    'android.auto_generated_rro_vendor__',
+    # Safety information
+    'com.samsung.safetyinformation',
+    # Locale Overlay Manager
+    'com.samsung.android.localeoverlaymanager',
+    'com.google.android.overlay.modules.captiveportallogin.forframework',
+    'com.google.android.overlay.modules.captiveportallogin.forframework',
+    # CSC
+    'com.samsung.sec.android.application.csc',
+    # Service mode
+    'com.sec.android.app.servicemodeapp',
+    # Android Switch
+    'com.google.android.apps.restore',
+    # Live Wallpaper Picker
+    'com.android.wallpaper.livepicker',
+    'com.google.android.overlay.modules.permissioncontroller.forframework',
+    'com.google.android.overlay.modules.permissioncontroller.forframework',
+    'com.sec.bcservice',
+    'com.sec.bcservice',
+    # Gestural Navigation Bar
+    'com.android.internal.systemui.navbar.gestural_narrow_back',
+    # Cell Broadcast Service
+    'com.google.android.cellbroadcastservice',
+    # One UI Home
+    'com.sec.android.app.launcher',
+    # Google Partner Setup
+    'com.google.android.partnersetup',
+    # Phone and Messaging Storage
+    'com.android.providers.telephony',
+    # Waterfall cutout
+    'com.android.internal.display.cutout.emulation.waterfall',
+    'com.samsung.android.wifi.resources',
+    'com.samsung.android.wifi.resources',
+    # Google Safety Center Resources,
+    'com.google.android.safetycenter.resources',
+    'EmergencyProvider',
+    'com.sec.android.provider.emergencymode',
+    # Speech Services by Google,
+    'com.google.android.tts',
+    # Smart Switch Agent,
+    'com.sec.android.easyMover.Agent',
+    # SetupWizardLegalProvider,
+    'com.sec.android.app.setupwizardlegalprovider',
+    # Emergency SOS,
+    'com.samsung.android.emergency',
+    'com.android.ondevicepersonalization.services.OnDevicePersonalizationApplication',
+    'com.google.android.ondevicepersonalization.services',
+    # Android Shared Library,
+    'com.google.android.ext.shared',
+    # FactoryAPP,
+    'com.val.hardware',
+    # Enterprise Sim Pin Service,
+    'com.sec.enterprise.mdm.services.simpin',
+    # KeyCustomizationInfoBNR,
+    'com.samsung.android.keycustomizationinfobackupservice',
+    'com.android.cts.ctsshim',
+    'com.android.cts.ctsshim',
+    'com.samsung.android.wifi.softap.resources',
+    'com.samsung.android.wifi.softap.resources',
+    # MTP Host,
+    'com.android.mtp',
+    # System Connectivity Resources,
+    'com.google.android.connectivity.resources',
+    # ClipboardSaveService,
+    'com.samsung.clipboardsaveservice',
+    # AudioMirroring,
+    'com.samsung.android.audiomirroring',
+    # Bookmark Provider,
+    'com.android.bookmarkprovider',
+    # Quick Share,
+    'com.samsung.android.app.sharelive',
+    # Samsung Push Service,
+    'com.sec.spp.push',
+    # SamsungOne,
+    'com.monotype.android.font.samsungone',
+    # RilNotifier,
+    'com.sec.app.RilErrorNotifier',
+    # CarrierDefaultApp,
+    'com.android.carrierdefaultapp',
+    # Support components,
+    'com.google.mainline.telemetry',
+    # Fused Location,
+    'com.android.location.fused',
+    # Gestural Navigation Bar,
+    'com.android.internal.systemui.navbar.gestural_extra_wide_back',
+    'com.android.localtransport',
+    'com.android.localtransport',
+    # Samsung Core Services,
+    'com.samsung.android.scs',
+    # Configuration message,
+    'com.wsomacp',
+    # Gestural Navigation Bar,
+    'com.samsung.internal.systemui.navbar.gestural_no_hint',
+    'com.google.android.overlay.modules.cellbroadcastreceiver',
+    'com.google.android.overlay.modules.cellbroadcastreceiver',
+    # Tasks,
+    'com.samsung.android.app.taskedge',
+    # Companion Device Manager,
+    'com.android.companiondevicemanager',
+    # System UWB Resources,
+    'com.android.uwb.resources',
+    # Wireless emergency alerts,
+    'com.google.android.cellbroadcastreceiver',
+    # Call,
+    'com.samsung.android.incallui',
+    # Tethering,
+    'com.google.android.networkstack.tethering',
+    # Basic Daydreams,
+    'com.android.dreams.basic',
+    # Reminder,
+    'com.samsung.android.app.reminder',
+    'com.google.android.overlay.modules.documentsui',
+    'com.google.android.overlay.modules.documentsui',
+    # Gestural Navigation Bar,
+    'com.android.internal.systemui.navbar.gestural_wide_back',
+    # Software update,
+    'com.wssyncmldm',
+    'com.google.android.overlay.gmsconfig.gsa',
+    'com.google.android.overlay.gmsconfig.gsa',
+    # User manual,
+    'com.sec.android.widgetapp.webmanual',
+    # Shell,
+    'com.android.shell',
+    # DQA,
+    'com.samsung.android.dqagent',
+    # App update,
+    'com.samsung.android.app.updatecenter',
+    # Google Location History,
+    'com.google.android.gms.location.history',
+    # User Dictionary,
+    'com.android.providers.userdictionary',
+    'com.android.wifi.dialog',
+    'com.android.wifi.dialog',
+    # Market Feedback Agent,
+    'com.google.android.feedback',
+    # Settings Suggestions,
+    'com.android.settings.intelligence',
+    # Photos & videos,
+    'com.google.android.photopicker',
+    'com.google.android.federatedcompute',
+    'com.google.android.federatedcompute',
+    # Bluetooth MIDI Service,
+    'com.android.bluetoothmidiservice',
+    'com.android.carrierconfig',
+    'com.android.carrierconfig',
+    # Double cutout,
+    'com.android.internal.display.cutout.emulation.double',
+    # Android System WebView,
+    'com.google.android.webview',
+    # One Handed Mode,
+    'com.android.internal.systemui.onehanded.gestural',
+    # Print Service Recommendation Service,
+    'com.google.android.printservice.recommendation',
+    # Apps,
+    'com.samsung.android.app.appsedge',
+    # Quick Share Agent,
+    'com.samsung.android.aware.service',
+    # Application recommendations,
+    'com.samsung.android.mapsagent',
+    # Samsung Keyboard,
+    'com.samsung.android.honeyboard',
+    # Wallpaper and style,
+    'com.samsung.android.app.dressroom',
+    # SimMobilityKit,
+    'com.samsung.ims.smk',
+    # Contacts Storage,
+    'com.samsung.android.providers.contacts',
+    # ContainerService,
+    'com.samsung.android.container',
+    # External Storage,
+    'com.android.externalstorage',
+    # EpdgTestApp,
+    'com.sec.epdgtestapp',
+    # Hiya Service,
+    'com.hiya.star',
+    # Device security,
+    'com.samsung.android.sm.devicesecurity',
+    # Quick Share Connectivity,
+    'com.samsung.android.mdx.kit',
+    # NetworkDiagnostic,
+    'com.samsung.android.networkdiagnostic',
+    # Key Chain,
+    'com.android.keychain',
+    'com.google.android.overlay.gmsconfig.geotz',
+    'com.google.android.overlay.gmsconfig.geotz',
+    # Work Setup,
+    'com.android.managedprovisioning',
+    # Perso,
+    'com.sec.android.app.personalization',
+    # IMS Service,
+    'com.sec.imsservice',
+    # SecurityPolicy,
+    'com.samsung.aasaservice',
+    # Find My Mobile,
+    'com.samsung.android.fmm',
+    # People,
+    'com.samsung.android.service.peoplestripe',
+    # Service mode RIL,
+    'com.sec.android.RilServiceModeApp',
+    # RcsSettings,
+    'com.samsung.rcs',
+    # Android System,
+    # android,
+    # Google Play services,
+    'com.google.android.gms',
+    # Software update,
+    'com.sec.android.soagent',
+    # NSDSWebApp,
+    'com.sec.vsim.ericssonnsds.webapp',
+    # Knox Enrollment Service,
+    'com.sec.enterprise.knox.cloudmdm.smdms',
+    # ConnectivityOverlay,
+    'com.samsung.android.ConnectivityOverlay',
+    # Android Auto,
+    'com.google.android.projection.gearhead',
+    'com.sec.phone',
+    'com.sec.phone',
+    # SecureElementApplication,
+    'com.android.se',
+    # ProxyHandler,
+    'com.android.proxyhandler',
+    # Sim App Dialog,
+    'com.android.simappdialog',
+    # TetheringAutomation,
+    'com.sec.automation',
+    # Wi-Fi Calling,
+    'com.sec.unifiedwfc',
+    # Device Services,
+    'com.samsung.android.kgclient',
+    # iaft,
+    'com.sec.android.iaft',
+    # Android Services Library,
+    'com.google.android.ext.services',
+    # BrightnessBNR,
+    'com.samsung.android.brightnessbackupservice',
+    # Bluetooth,
+    'com.android.bluetooth',
+    # SecVideoEngineService,
+    'com.sec.sve',
+    # DckTimeSyncApplication,
+    'com.samsung.android.dck.timesync',
+    'com.samsung.android.biometrics.app.setting',
+    'com.samsung.android.biometrics.app.setting',
+    # DiagMonAgent,
+    'com.sec.android.diagmonagent',
+    # Main components,
+    'com.google.mainline.adservices',
+    # slocation,
+    'com.samsung.android.location',
+    # Configuration update,
+    'com.samsung.android.cidmanager',
+    # KLMS Agent,
+    'com.samsung.klmsagent',
+    # Service provider location,
+    'com.sec.location.nfwlocationprivacy',
+    # System Tracing,
+    'com.android.traceur',
+    # Accessibility,
+    'com.samsung.accessibility',
+    # Phone,
+    'com.samsung.crane',
+    # SKMSAgentService,
+    'com.skms.android.agent',
+    # ConfigUpdater,
+    'com.google.android.configupdater',
+    # Dynamic System Updates,
+    'com.android.dynsystem',
+    # HTML Viewer,
+    'com.android.htmlviewer',
+    # Gestural Navigation Bar,
+    'com.samsung.internal.systemui.navbar.sec_gestural_no_hint',
+    'com.samsung.android.wifi.p2paware.resources',
+    'com.samsung.android.wifi.p2paware.resources',
+    # Samsung setup wizard,
+    'com.sec.android.app.SecSetupWizard',
+    # Clipboard edge,
+    'com.samsung.android.app.clipboardedge',
+    # Nearby device scanning,
+    'com.samsung.android.beaconmanager',
+    # Package installer,
+    'com.google.android.packageinstaller',
+    # OsuLogin,
+    'com.android.hotspot2.osulogin',
+    # Gestural Navigation Bar,
+    'com.samsung.internal.systemui.navbar.sec_gestural',
+    # CMHProvider,
+    'com.samsung.cmh',
+    # Galaxy Resource Updater,
+    'com.samsung.android.gru',
+    # Samsung text-to-speech engine,
+    'com.samsung.SMT',
+    # Samsung News,
+    'com.samsung.android.app.spage',
+    # ChromeCustomizations,
+    'com.sec.android.app.chromecustomizations',
+    # Photo Screensavers,
+    'com.android.dreams.phototable',
+    'com.samsung.android.smartswitchassistant',
+    'com.samsung.android.smartswitchassistant',
+    # Smart Call,
+    'com.samsung.android.smartcallprovider',
+    # DeviceKeystring,
+    'com.sec.android.app.factorykeystring',
+    'com.samsung.android.wallpaper.res',
+    'com.samsung.android.wallpaper.res',
+    # System Wi-Fi Resources,
+    'com.android.wifi.resources',
+    'com.android.sharedstoragebackup',
+    'com.android.sharedstoragebackup',
+    # Clock,
+    'com.sec.android.app.clockpackage',
+    'com.sec.android.app.clockpackage.ClockPackage',
+    'com.google.android.sdksandbox',
+    'com.google.android.sdksandbox',
+    # VpnDialogs,
+    'com.android.vpndialogs',
+    # Google Services Framework,
+    'com.google.android.gsf',
+    # Corner cutout,
+    'com.android.internal.display.cutout.emulation.corner',
+    # Main components,
+    'com.google.android.modulemetadata',
+    # Bluetooth Agent,
+    'com.sec.android.app.bluetoothagent',
+    # Contacts,
+    'com.samsung.android.app.contacts',
+    'com.samsung.android.contacts.contactslist.PeopleActivity',
+    # Sticker Center,
+    'com.samsung.android.stickercenter',
+    # Settings Storage,
+    'com.android.providers.settings',
+    # System UI,
+    'com.android.systemui',
+    # Default Print Service,
+    'com.android.bips',
+    # Permission controller,
+    'com.google.android.permissioncontroller',
+    # IMS Settings,
+    'com.samsung.advp.imssettings',
+    # Sec Media Storage,
+    'com.samsung.android.providers.media',
+    'com.google.android.appsearch.apk',
+    'com.google.android.appsearch.apk',
+    # Media and devices,
+    'com.samsung.android.mdx.quickboard',
+    # Files,
+    'com.google.android.documentsui',
+    # Launcher,
+    'com.sec.android.emergencylauncher',
+    'com.google.android.overlay.modules.cellbroadcastservice',
+    'com.google.android.overlay.modules.cellbroadcastservice',
+    # Customization Service,
+    'com.samsung.android.rubin.app',
+    # Network manager,
+    'com.google.android.networkstack',
+    # Samsung account,
+    'com.osp.app.signin',
+    'com.android.backupconfirm',
+    'com.android.backupconfirm',
+    # Google One Time Init,
+    'com.google.android.onetimeinitializer',
+    'com.sprd.wifi.resources.overlay',
+    'com.sprd.wifi.resources.overlay',
+    # Gallery,
+    'com.sec.android.gallery3d',
+    'com.samsung.android.gallery.app.activity.GalleryActivity',
+    'com.samsung.android.networkstack.tethering.overlay',
+    'com.samsung.android.networkstack.tethering.overlay',
+    # Samsung Device Health Manager Service,
+    'com.sec.android.sdhms',
+    # Edge panels,
+    'com.samsung.android.app.cocktailbarservice',
+    # Radio,
+    'com.sec.android.app.fm',
+    'com.sec.android.app.fm.MainActivity',
+    # Settings,
+    'com.android.settings',
+    'com.android.settings.Settings',
+    # Wi-Fi Direct,
+    'com.samsung.android.allshare.service.fileshare',
+    # Gallery stories,
+    'com.samsung.storyservice',
+    # Device Health Services,
+    'com.google.android.apps.turbo',
+    'com.google.android.overlay.modules.permissioncontroller',
+    'com.google.android.overlay.modules.permissioncontroller',
+    # Android Setup,
+    'com.google.android.setupwizard',
+    # Noto Serif / Source Sans Pro,
+    'com.android.theme.font.notoserifsource',
+    # Samsung Editing Assets,
+    'com.sec.android.app.ve.vebgm',
+    # Phone services,
+    'com.android.phone',
+    # Android S Easter Egg,
+    'com.android.egg',
+    # MmsService,
+    'com.android.mms.service',
+    # USBSettings,
+    'com.sec.usbsettings',
+    # BadgeProvider,
+    'com.sec.android.provider.badge',
+    # Input Devices,
+    'com.android.inputdevices',
+    # Call Log Backup/Restore,
+    'com.android.calllogbackup',
+    'com.android.providers.partnerbookmarks',
+    'com.android.providers.partnerbookmarks',
+    # Emergency sharing,
+    'com.sec.android.app.safetyassurance',
+    # Google Calendar Sync,
+    'com.google.android.syncadapters.calendar',
+    # Calendar storage,
+    'com.android.providers.calendar',
+    # Captive Portal Login,
+    'com.google.android.captiveportallogin',
+    # Punch Hole cutout,
+    'com.android.internal.display.cutout.emulation.hole',
+    # Sound picker,
+    'com.samsung.android.app.soundpicker',
+    'com.google.android.overlay.gmsconfig.common',
+    'com.google.android.overlay.gmsconfig.common',
+    # TalkBack,
+    'com.samsung.android.accessibility.talkback',
+    # ConnectivityUxOverlay,
+    'com.samsung.android.ConnectivityUxOverlay',
+    # Phone calls,
+    'com.android.server.telecom',
+    # Wallpaper services,
+    'com.samsung.android.dynamiclock',
+    'com.android.wallpaperbackup',
+    'com.android.wallpaperbackup',
+    # SamSungStickerSource,
+    'com.src.android.app.camera.sticker',
+    # ConfigAPK,
+    'android.autoinstalls.config.samsung',
+    # 3 Button Navigation Bar,
+    'com.android.internal.systemui.navbar.threebutton',
+    # Call settings,
+    'com.samsung.android.app.telephonyui',
+    # Dual Messenger,
+    'com.samsung.android.da.daagent',
+    'com.android.wallpapercropper',
+    'com.android.wallpapercropper',
+    # AppCloud,
+    'com.aura.oobe.samsung.gl',
+    # SecSoundPicker,
+    'com.samsung.android.secsoundpicker',
+    # Phone,
+    'com.samsung.android.dialer',
+    'com.samsung.android.dialer.DialtactsActivity',
+    # Samsung Location SDK,
+    'com.sec.location.nsflp2',
+    # MDMApp,
+    'com.samsung.android.mdm',
+    # Separate app sound,
+    'com.samsung.android.setting.multisound',
+    # Clock style,
+    'com.samsung.android.app.clockpack',
+    # Recommended apps,
+    'com.samsung.android.app.omcagent',
+    # Tools,
+    'com.sec.android.app.quicktool',
+    # Certificate installer,
+    'com.android.certinstaller',
+    # Automation Test,
+    'com.sec.android.app.DataCreate',
+    # ImsLogger,
+    'com.sec.imslogger',
+    # MTP application,
+    'com.samsung.android.mtp',
+    # Permission usage,
+    'com.samsung.android.privacydashboard',
+    # NetworkStackOverlay,
+    'com.samsung.android.networkstack',
+    'com.google.android.overlay.gmsconfig.photos',
+    'com.google.android.overlay.gmsconfig.photos',
+    # Download Manager,
+    'com.android.providers.downloads',
+    # Nearby device scanning,
+    'com.samsung.android.easysetup',
+    # Media picker,
+    'com.google.android.providers.media.module',
+    # Configuration update,
+    'com.samsung.android.sdm.config',
+    # Foundation,
+    'com.monotype.android.font.foundation',
+    # Samsung Kids Installer,
+    'com.samsung.android.kidsinstaller',
+    # Tall cutout,
+    'com.android.internal.display.cutout.emulation.tall',
+    'com.google.android.overlay.modules.modulemetadata.forframework',
+    'com.google.android.overlay.modules.modulemetadata.forframework',
+    # DRParser Mode,
+    'com.sec.android.app.parser',
+    'com.android.cts.priv.ctsshim',
+    'com.android.cts.priv.ctsshim',
+    # Sound quality and effects,
+    'com.sec.android.app.soundalive',
+    'com.google.android.overlay.modules.ext.services',
+    'com.google.android.overlay.modules.ext.services',
+    # Downloads,
+    'com.android.providers.downloads.ui',
+    # Blocked Numbers Storage,
+    'com.android.providers.blockednumber',
+    # EasyOneHand,
+    'com.sec.android.easyonehand',
+    # Gestural Navigation Bar,
+    'com.android.internal.systemui.navbar.gestural',
+    # android.auto_generated_rro_product__,
+    # android.auto_generated_rro_product__,
+    # Gallery,
+    'com.samsung.android.widget.pictureframe',
+    # Gmail,
+    'com.google.android.gm',
+    'com.google.android.gm.ConversationListActivityGmail',
+    # Ultra data saving mode,
+    'com.samsung.android.uds',
+    # HandwritingService,
+    'com.samsung.android.sdk.handwriting',
+    # ShortcutBNR,
+    'com.samsung.android.shortcutbackupservice',
+    # Wearable Manager Installer,
+    'com.samsung.android.app.watchmanagerstub',
+    # Digital Wellbeing,
+    'com.samsung.android.forest',
+    # WcmUrlsNetworkStackOverlay,
+    'com.samsung.android.wcmurlsnetworkstack',
+    # Google Wi-Fi Provisioner,
+    'com.google.android.apps.carrier.carrierwifi',
+    # CameraExtensionsProxy,
+    'com.android.cameraextensions',
+]
 
 data = [
     # Ultimate USB
@@ -93,7 +663,7 @@ data = [
     'com.heartbeattracker.pulseoximeter.heartrate.ui.activitis.SplashActivity',
     # ZArchiver
     'ru.zdevs.zarchiver',
-    'ru.zdevs.zarchiver.ZArchiver'
+    'ru.zdevs.zarchiver.ZArchiver',
     # Synthesia
     'com.synthesia.synthesia',
     'com.synthesia.synthesia.SynthesiaActivity',
@@ -127,1545 +697,94 @@ data = [
     # CircuitSafari
     'com.logipipe.circuitsafari',
     'com.logipipe.circuitsafari.FullscreenActivity',
+    # Ampere
+    'com.gombosdev.ampere',
+    'com.gombosdev.ampere.MainActivity',
+    # Cxxdroid
+    'ru.iiec.cxxdroid',
+    'ru.iiec.cxxdroid.CxxActivity',
+    # Waze
+    'com.waze',
+    'com.waze.FreeMapAppActivity',
+    # EveryCircuit
+    'com.everycircuit.free',
+    'com.everycircuit.HomeLauncher',
+    # SIM toolkit
+    'com.android.stk2',
+    # SettingsBixby
+    'com.samsung.android.app.settings.bixby',
+    # Calendar,
+    'com.samsung.android.calendar',
+    'com.samsung.android.app.calendar.activity.MainActivity',
+    # Editor Lite,
+    'com.samsung.app.newtrim',
+    # CallBGProvider,
+    'com.samsung.android.callbgprovider',
+    # Photo Editor,
+    'com.sec.android.mimage.photoretouching',
+    # Samsung capture,
+    'com.samsung.android.app.smartcapture',
+    # Camera,
+    'com.sec.android.app.camera',
+    'com.sec.android.app.camera.Camera',
+    # Device care,
+    'com.samsung.android.lool',
+    # Galaxy Themes Service,
+    'com.samsung.android.themecenter',
+    # Video Player,
+    'com.samsung.android.video',
+    'com.sec.epdg',
+    'com.sec.epdg',
+    # Galaxy Store,
+    'com.sec.android.app.samsungapps',
+    'com.sec.android.app.samsungapps.SamsungAppsMainActivity',
+    # Game Optimizing Service,
+    'com.samsung.android.game.gos',
+    'com.android.ons',
+    'com.android.ons',
+    # Galaxy Themes,
+    'com.samsung.android.themestore',
+    # Maps,
+    'com.google.android.apps.maps',
+    'com.google.android.maps.MapsActivity',
+    # Weather,
+    'com.sec.android.daemonapp',
+    # Meet,
+    'com.google.android.apps.tachyon',
+    # Messages,
+    'com.google.android.apps.messaging',
+    # Google,
+    'com.google.android.googlequicksearchbox',
+    'com.google.android.googlequicksearchbox.SearchActivity',
+    # Finder,
+    'com.samsung.android.app.galaxyfinder',
+    'com.google.android.networkstack.tethering.overlay',
+    'com.google.android.networkstack.tethering.overlay',
+    # OneDrive,
+    'com.microsoft.skydrive',
+    'com.microsoft.skydrive.MainActivity',
+    # Modes and Routines,
+    'com.samsung.android.app.routines',
+    # Messages,
+    'com.samsung.android.messaging',
+    'com.android.mms.ui.ConversationComposer',
+    'com.samsung.android.wifi.softapwpathree.resources',
+    'com.samsung.android.wifi.softapwpathree.resources',
+    # Eye comfort shield,
+    'com.samsung.android.bluelightfilter',
+    # Google Play Store,
+    'com.android.vending',
+    'com.android.vending.AssetBrowserActivity',
+    # Chrome,
+    'com.android.chrome',
+    'com.google.android.apps.chrome.Main',
+    'com.android.providers.media',
+    'com.android.providers.media',
+    # SIM toolkit,
+    'com.android.stk',
+    # Family Link parental controls,
+    'com.google.android.gms.supervision',
+    # YouTube,
+    'com.google.android.youtube',
+    'com.google.android.youtube.app.honeycomb.Shell$HomeActivity',
 ]
-
-text = """
-WhatsApp
-com.whatsapp
-com.whatsapp.Main
-
-Ampere
-com.gombosdev.ampere
-com.gombosdev.ampere.MainActivity
-
-AdGuard
-com.adguard.android
-com.adguard.android.ui.activity.SplashActivity
-
-Cxxdroid
-
-ru.iiec.cxxdroid
-
-ru.iiec.cxxdroid.CxxActivity
-
-Android System SafetyCore
-com.google.android.safetycore
-
-null
-
-VirusTotal
-
-org.chromium.webapk.a1d8342e5ce2b8837_v2
-
-org.chromium.webapk.shell_apk.h2o.H2OOpaqueMainActivity
-
-Waze
-com.waze
-com.waze.FreeMapAppActivity
-
-Avast Mobile Security
-com.avast.android.mobilesecurity
-com.avast.android.one.base.ui.main.MainActivity
-
-Android System Key Verifier
-com.google.android.contactkeys
-
-null
-
-EveryCircuit
-com.everycircuit.free
-com.everycircuit.HomeLauncher
-
-TikTok
-com.ss.android.ugc.trill
-com.ss.android.ugc.aweme.splash.SplashActivity
-
-DeepSeek
-com.deepseek.chat
-com.deepseek.chat.MainActivity
-
-My Files
-com.sec.android.app.myfiles
-com.sec.android.app.myfiles.external.ui.MainActivity
-
-Storage Manager
-com.android.storagemanager
-
-null
-
-Print Spooler
-com.android.printspooler
-
-null
-
-SIM toolkit
-com.android.stk2
-
-null
-
-Samsung Cloud
-com.samsung.android.scloud
-
-null
-
-Ad Privacy
-com.google.android.adservices.api
-
-null
-
-SettingsBixby
-com.samsung.android.app.settings.bixby
-
-null
-
-Group Sharing
-com.samsung.android.mobileservice
-
-null
-
-Samsung Cloud Assistant
-com.samsung.android.scpm
-
-null
-
-android.auto_generated_rro_vendor__
-
-android.auto_generated_rro_vendor__
-
-null
-
-PacProcessor
-com.android.pacprocessor
-
-null
-
-Safety information
-com.samsung.safetyinformation
-
-null
-
-Locale Overlay Manager
-com.samsung.android.localeoverlaymanager
-
-null
-com.google.android.overlay.modules.captiveportallogin.forframework
-com.google.android.overlay.modules.captiveportallogin.forframework
-
-null
-
-CSC
-com.samsung.sec.android.application.csc
-
-null
-
-Service mode
-com.sec.android.app.servicemodeapp
-
-null
-
-Android Switch
-com.google.android.apps.restore
-
-null
-
-Live Wallpaper Picker
-com.android.wallpaper.livepicker
-
-null
-com.google.android.overlay.modules.permissioncontroller.forframework
-com.google.android.overlay.modules.permissioncontroller.forframework
-
-null
-com.sec.bcservice
-com.sec.bcservice
-
-null
-
-Gestural Navigation Bar
-com.android.internal.systemui.navbar.gestural_narrow_back
-
-null
-
-Cell Broadcast Service
-com.google.android.cellbroadcastservice
-
-null
-
-One UI Home
-com.sec.android.app.launcher
-
-null
-
-Google Partner Setup
-com.google.android.partnersetup
-
-null
-
-Phone and Messaging Storage
-com.android.providers.telephony
-
-null
-
-Waterfall cutout
-com.android.internal.display.cutout.emulation.waterfall
-
-null
-com.samsung.android.wifi.resources
-com.samsung.android.wifi.resources
-
-null
-
-Google Safety Center Resources
-com.google.android.safetycenter.resources
-
-null
-
-EmergencyProvider
-com.sec.android.provider.emergencymode
-
-null
-
-Speech Services by Google
-com.google.android.tts
-
-null
-
-Smart Switch Agent
-com.sec.android.easyMover.Agent
-
-null
-
-SetupWizardLegalProvider
-com.sec.android.app.setupwizardlegalprovider
-
-null
-
-Emergency SOS
-com.samsung.android.emergency
-
-null
-com.android.ondevicepersonalization.services.OnDevicePersonalizationApplication
-com.google.android.ondevicepersonalization.services
-
-null
-
-Android Shared Library
-com.google.android.ext.shared
-
-null
-
-FactoryAPP
-com.val.hardware
-
-null
-
-Enterprise Sim Pin Service
-com.sec.enterprise.mdm.services.simpin
-
-null
-
-KeyCustomizationInfoBNR
-com.samsung.android.keycustomizationinfobackupservice
-
-null
-com.android.cts.ctsshim
-com.android.cts.ctsshim
-
-null
-com.samsung.android.wifi.softap.resources
-com.samsung.android.wifi.softap.resources
-
-null
-
-MTP Host
-com.android.mtp
-
-null
-
-System Connectivity Resources
-com.google.android.connectivity.resources
-
-null
-
-ClipboardSaveService
-com.samsung.clipboardsaveservice
-
-null
-
-AudioMirroring
-com.samsung.android.audiomirroring
-
-null
-
-Bookmark Provider
-com.android.bookmarkprovider
-
-null
-
-Quick Share
-com.samsung.android.app.sharelive
-
-null
-
-Samsung Push Service
-com.sec.spp.push
-
-null
-
-SamsungOne
-com.monotype.android.font.samsungone
-
-null
-
-RilNotifier
-com.sec.app.RilErrorNotifier
-
-null
-
-CarrierDefaultApp
-com.android.carrierdefaultapp
-
-null
-
-Support components
-com.google.mainline.telemetry
-
-null
-
-Fused Location
-com.android.location.fused
-
-null
-
-Gestural Navigation Bar
-com.android.internal.systemui.navbar.gestural_extra_wide_back
-
-null
-com.android.localtransport
-com.android.localtransport
-
-null
-
-Samsung Core Services
-com.samsung.android.scs
-
-null
-
-Configuration message
-com.wsomacp
-
-null
-
-Gestural Navigation Bar
-com.samsung.internal.systemui.navbar.gestural_no_hint
-
-null
-com.google.android.overlay.modules.cellbroadcastreceiver
-com.google.android.overlay.modules.cellbroadcastreceiver
-
-null
-
-Tasks
-com.samsung.android.app.taskedge
-
-null
-
-Companion Device Manager
-com.android.companiondevicemanager
-
-null
-
-System UWB Resources
-com.android.uwb.resources
-
-null
-
-Wireless emergency alerts
-com.google.android.cellbroadcastreceiver
-
-null
-
-Call
-com.samsung.android.incallui
-
-null
-
-Tethering
-com.google.android.networkstack.tethering
-
-null
-
-Basic Daydreams
-com.android.dreams.basic
-
-null
-
-Reminder
-com.samsung.android.app.reminder
-
-null
-com.google.android.overlay.modules.documentsui
-com.google.android.overlay.modules.documentsui
-
-null
-
-Gestural Navigation Bar
-com.android.internal.systemui.navbar.gestural_wide_back
-
-null
-
-Software update
-com.wssyncmldm
-
-null
-com.google.android.overlay.gmsconfig.gsa
-com.google.android.overlay.gmsconfig.gsa
-
-null
-
-Calendar
-com.samsung.android.calendar
-com.samsung.android.app.calendar.activity.MainActivity
-
-Editor Lite
-com.samsung.app.newtrim
-
-null
-
-CallBGProvider
-com.samsung.android.callbgprovider
-
-null
-
-Photo Editor
-com.sec.android.mimage.photoretouching
-
-null
-
-Samsung capture
-com.samsung.android.app.smartcapture
-
-null
-
-Shell
-com.android.shell
-
-null
-
-User manual
-com.sec.android.widgetapp.webmanual
-
-null
-
-DQA
-com.samsung.android.dqagent
-
-null
-
-App update
-com.samsung.android.app.updatecenter
-
-null
-
-Google Location History
-com.google.android.gms.location.history
-
-null
-
-User Dictionary
-com.android.providers.userdictionary
-
-null
-com.android.wifi.dialog
-com.android.wifi.dialog
-
-null
-
-Market Feedback Agent
-com.google.android.feedback
-
-null
-
-Settings Suggestions
-com.android.settings.intelligence
-
-null
-
-Photos & videos
-com.google.android.photopicker
-
-null
-com.google.android.federatedcompute
-com.google.android.federatedcompute
-
-null
-
-Bluetooth MIDI Service
-com.android.bluetoothmidiservice
-
-null
-com.android.carrierconfig
-com.android.carrierconfig
-
-null
-
-Double cutout
-com.android.internal.display.cutout.emulation.double
-
-null
-
-Android System WebView
-com.google.android.webview
-
-null
-
-One Handed Mode
-com.android.internal.systemui.onehanded.gestural
-
-null
-
-Print Service Recommendation Service
-com.google.android.printservice.recommendation
-
-null
-
-Apps
-com.samsung.android.app.appsedge
-
-null
-
-Camera
-com.sec.android.app.camera
-com.sec.android.app.camera.Camera
-
-Quick Share Agent
-com.samsung.android.aware.service
-
-null
-
-Application recommendations
-com.samsung.android.mapsagent
-
-null
-
-Samsung Keyboard
-com.samsung.android.honeyboard
-
-null
-
-Wallpaper and style
-com.samsung.android.app.dressroom
-
-null
-
-SimMobilityKit
-com.samsung.ims.smk
-
-null
-
-Device care
-com.samsung.android.lool
-
-null
-
-Galaxy Themes Service
-com.samsung.android.themecenter
-
-null
-
-Contacts Storage
-com.samsung.android.providers.contacts
-
-null
-
-ContainerService
-com.samsung.android.container
-
-null
-
-External Storage
-com.android.externalstorage
-
-null
-
-Video Player
-com.samsung.android.video
-
-null
-com.sec.epdg
-com.sec.epdg
-
-null
-
-EpdgTestApp
-com.sec.epdgtestapp
-
-null
-
-Hiya Service
-com.hiya.star
-
-null
-
-Device security
-com.samsung.android.sm.devicesecurity
-
-null
-
-Quick Share Connectivity
-com.samsung.android.mdx.kit
-
-null
-
-NetworkDiagnostic
-com.samsung.android.networkdiagnostic
-
-null
-
-Key Chain
-com.android.keychain
-
-null
-com.google.android.overlay.gmsconfig.geotz
-com.google.android.overlay.gmsconfig.geotz
-
-null
-
-Work Setup
-com.android.managedprovisioning
-
-null
-
-Perso
-com.sec.android.app.personalization
-
-null
-
-IMS Service
-com.sec.imsservice
-
-null
-
-SecurityPolicy
-com.samsung.aasaservice
-
-null
-
-Find My Mobile
-com.samsung.android.fmm
-
-null
-
-People
-com.samsung.android.service.peoplestripe
-
-null
-
-Service mode RIL
-com.sec.android.RilServiceModeApp
-
-null
-
-RcsSettings
-com.samsung.rcs
-
-null
-
-Android System
-
-android
-
-null
-
-Google Play services
-com.google.android.gms
-
-null
-
-Software update
-com.sec.android.soagent
-
-null
-
-NSDSWebApp
-com.sec.vsim.ericssonnsds.webapp
-
-null
-
-Knox Enrollment Service
-com.sec.enterprise.knox.cloudmdm.smdms
-
-null
-
-ConnectivityOverlay
-com.samsung.android.ConnectivityOverlay
-
-null
-
-Android Auto
-com.google.android.projection.gearhead
-
-null
-com.sec.phone
-com.sec.phone
-
-null
-
-SecureElementApplication
-com.android.se
-
-null
-
-ProxyHandler
-com.android.proxyhandler
-
-null
-
-Sim App Dialog
-com.android.simappdialog
-
-null
-
-TetheringAutomation
-com.sec.automation
-
-null
-
-Wi-Fi Calling
-com.sec.unifiedwfc
-
-null
-
-Device Services
-com.samsung.android.kgclient
-
-null
-
-iaft
-com.sec.android.iaft
-
-null
-
-Android Services Library
-com.google.android.ext.services
-
-null
-
-BrightnessBNR
-com.samsung.android.brightnessbackupservice
-
-null
-
-Bluetooth
-com.android.bluetooth
-
-null
-
-SecVideoEngineService
-com.sec.sve
-
-null
-
-Galaxy Store
-com.sec.android.app.samsungapps
-com.sec.android.app.samsungapps.SamsungAppsMainActivity
-
-DckTimeSyncApplication
-com.samsung.android.dck.timesync
-
-null
-com.samsung.android.biometrics.app.setting
-com.samsung.android.biometrics.app.setting
-
-null
-
-DiagMonAgent
-com.sec.android.diagmonagent
-
-null
-
-Main components
-com.google.mainline.adservices
-
-null
-
-slocation
-com.samsung.android.location
-
-null
-
-Configuration update
-com.samsung.android.cidmanager
-
-null
-
-KLMS Agent
-com.samsung.klmsagent
-
-null
-
-Service provider location
-com.sec.location.nfwlocationprivacy
-
-null
-
-System Tracing
-com.android.traceur
-
-null
-
-Accessibility
-com.samsung.accessibility
-
-null
-
-Phone
-com.samsung.crane
-
-null
-
-SKMSAgentService
-com.skms.android.agent
-
-null
-
-ConfigUpdater
-com.google.android.configupdater
-
-null
-
-Dynamic System Updates
-com.android.dynsystem
-
-null
-
-HTML Viewer
-com.android.htmlviewer
-
-null
-
-Game Optimizing Service
-com.samsung.android.game.gos
-
-null
-com.android.ons
-com.android.ons
-
-null
-
-Galaxy Themes
-com.samsung.android.themestore
-
-null
-
-Gestural Navigation Bar
-com.samsung.internal.systemui.navbar.sec_gestural_no_hint
-
-null
-com.samsung.android.wifi.p2paware.resources
-com.samsung.android.wifi.p2paware.resources
-
-null
-
-Samsung setup wizard
-com.sec.android.app.SecSetupWizard
-
-null
-
-Clipboard edge
-com.samsung.android.app.clipboardedge
-
-null
-
-Nearby device scanning
-com.samsung.android.beaconmanager
-
-null
-
-Package installer
-com.google.android.packageinstaller
-
-null
-
-OsuLogin
-com.android.hotspot2.osulogin
-
-null
-
-Gestural Navigation Bar
-com.samsung.internal.systemui.navbar.sec_gestural
-
-null
-
-CMHProvider
-com.samsung.cmh
-
-null
-
-Galaxy Resource Updater
-com.samsung.android.gru
-
-null
-
-Samsung text-to-speech engine
-com.samsung.SMT
-
-null
-
-Samsung News
-com.samsung.android.app.spage
-
-null
-
-ChromeCustomizations
-com.sec.android.app.chromecustomizations
-
-null
-
-Photo Screensavers
-com.android.dreams.phototable
-
-null
-com.samsung.android.smartswitchassistant
-com.samsung.android.smartswitchassistant
-
-null
-
-Smart Call
-com.samsung.android.smartcallprovider
-
-null
-
-DeviceKeystring
-com.sec.android.app.factorykeystring
-
-null
-com.samsung.android.wallpaper.res
-com.samsung.android.wallpaper.res
-
-null
-
-System Wi-Fi Resources
-com.android.wifi.resources
-
-null
-com.android.sharedstoragebackup
-com.android.sharedstoragebackup
-
-null
-
-Clock
-com.sec.android.app.clockpackage
-com.sec.android.app.clockpackage.ClockPackage
-com.google.android.sdksandbox
-com.google.android.sdksandbox
-
-null
-
-VpnDialogs
-com.android.vpndialogs
-
-null
-
-Google Services Framework
-com.google.android.gsf
-
-null
-
-Maps
-com.google.android.apps.maps
-com.google.android.maps.MapsActivity
-
-Weather
-com.sec.android.daemonapp
-
-null
-
-Meet
-com.google.android.apps.tachyon
-
-null
-
-Corner cutout
-com.android.internal.display.cutout.emulation.corner
-
-null
-
-Main components
-com.google.android.modulemetadata
-
-null
-
-Bluetooth Agent
-com.sec.android.app.bluetoothagent
-
-null
-
-Messages
-com.google.android.apps.messaging
-
-null
-
-Contacts
-com.samsung.android.app.contacts
-com.samsung.android.contacts.contactslist.PeopleActivity
-
-Sticker Center
-com.samsung.android.stickercenter
-
-null
-
-Google
-com.google.android.googlequicksearchbox
-com.google.android.googlequicksearchbox.SearchActivity
-
-Settings Storage
-com.android.providers.settings
-
-null
-
-System UI
-com.android.systemui
-
-null
-
-Default Print Service
-com.android.bips
-
-null
-
-Finder
-com.samsung.android.app.galaxyfinder
-
-null
-com.google.android.networkstack.tethering.overlay
-com.google.android.networkstack.tethering.overlay
-
-null
-
-OneDrive
-com.microsoft.skydrive
-com.microsoft.skydrive.MainActivity
-
-Permission controller
-com.google.android.permissioncontroller
-
-null
-
-IMS Settings
-com.samsung.advp.imssettings
-
-null
-
-Sec Media Storage
-com.samsung.android.providers.media
-
-null
-com.google.android.appsearch.apk
-com.google.android.appsearch.apk
-
-null
-
-Media and devices
-com.samsung.android.mdx.quickboard
-
-null
-
-Files
-com.google.android.documentsui
-
-null
-
-Modes and Routines
-com.samsung.android.app.routines
-
-null
-
-Launcher
-com.sec.android.emergencylauncher
-
-null
-com.google.android.overlay.modules.cellbroadcastservice
-com.google.android.overlay.modules.cellbroadcastservice
-
-null
-
-Customization Service
-com.samsung.android.rubin.app
-
-null
-
-Network manager
-com.google.android.networkstack
-
-null
-
-Samsung account
-com.osp.app.signin
-
-null
-com.android.backupconfirm
-com.android.backupconfirm
-
-null
-
-Google One Time Init
-com.google.android.onetimeinitializer
-
-null
-com.sprd.wifi.resources.overlay
-com.sprd.wifi.resources.overlay
-
-null
-
-Gallery
-com.sec.android.gallery3d
-com.samsung.android.gallery.app.activity.GalleryActivity
-com.samsung.android.networkstack.tethering.overlay
-com.samsung.android.networkstack.tethering.overlay
-
-null
-
-Samsung Device Health Manager Service
-com.sec.android.sdhms
-
-null
-
-Edge panels
-com.samsung.android.app.cocktailbarservice
-
-null
-
-Radio
-com.sec.android.app.fm
-com.sec.android.app.fm.MainActivity
-
-Settings
-com.android.settings
-com.android.settings.Settings
-
-Wi-Fi Direct
-com.samsung.android.allshare.service.fileshare
-
-null
-
-Gallery stories
-com.samsung.storyservice
-
-null
-
-Device Health Services
-com.google.android.apps.turbo
-
-null
-com.google.android.overlay.modules.permissioncontroller
-com.google.android.overlay.modules.permissioncontroller
-
-null
-
-Android Setup
-com.google.android.setupwizard
-
-null
-
-Noto Serif / Source Sans Pro
-com.android.theme.font.notoserifsource
-
-null
-
-Samsung Editing Assets
-com.sec.android.app.ve.vebgm
-
-null
-
-Messages
-com.samsung.android.messaging
-com.android.mms.ui.ConversationComposer
-com.samsung.android.wifi.softapwpathree.resources
-com.samsung.android.wifi.softapwpathree.resources
-
-null
-
-Phone services
-com.android.phone
-
-null
-
-Android S Easter Egg
-com.android.egg
-
-null
-
-MmsService
-com.android.mms.service
-
-null
-
-USBSettings
-com.sec.usbsettings
-
-null
-
-Eye comfort shield
-com.samsung.android.bluelightfilter
-
-null
-
-BadgeProvider
-com.sec.android.provider.badge
-
-null
-
-Input Devices
-com.android.inputdevices
-
-null
-
-Call Log Backup/Restore
-com.android.calllogbackup
-
-null
-com.android.providers.partnerbookmarks
-com.android.providers.partnerbookmarks
-
-null
-
-Emergency sharing
-com.sec.android.app.safetyassurance
-
-null
-
-Google Calendar Sync
-com.google.android.syncadapters.calendar
-
-null
-
-Calendar storage
-com.android.providers.calendar
-
-null
-
-Captive Portal Login
-com.google.android.captiveportallogin
-
-null
-
-Punch Hole cutout
-com.android.internal.display.cutout.emulation.hole
-
-null
-
-Sound picker
-com.samsung.android.app.soundpicker
-
-null
-com.google.android.overlay.gmsconfig.common
-com.google.android.overlay.gmsconfig.common
-
-null
-
-TalkBack
-com.samsung.android.accessibility.talkback
-
-null
-
-ConnectivityUxOverlay
-com.samsung.android.ConnectivityUxOverlay
-
-null
-
-Google Play Store
-com.android.vending
-com.android.vending.AssetBrowserActivity
-
-Phone calls
-com.android.server.telecom
-
-null
-
-Wallpaper services
-com.samsung.android.dynamiclock
-
-null
-com.android.wallpaperbackup
-com.android.wallpaperbackup
-
-null
-
-Chrome
-com.android.chrome
-com.google.android.apps.chrome.Main
-com.android.providers.media
-com.android.providers.media
-
-null
-
-SamSungStickerSource
-com.src.android.app.camera.sticker
-
-null
-
-SIM toolkit
-com.android.stk
-
-null
-
-Family Link parental controls
-com.google.android.gms.supervision
-
-null
-
-YouTube
-com.google.android.youtube
-com.google.android.youtube.app.honeycomb.Shell$HomeActivity
-
-ConfigAPK
-
-android.autoinstalls.config.samsung
-
-null
-
-3 Button Navigation Bar
-com.android.internal.systemui.navbar.threebutton
-
-null
-
-Call settings
-com.samsung.android.app.telephonyui
-
-null
-
-Dual Messenger
-com.samsung.android.da.daagent
-
-null
-com.android.wallpapercropper
-com.android.wallpapercropper
-
-null
-
-AppCloud
-com.aura.oobe.samsung.gl
-
-null
-
-SecSoundPicker
-com.samsung.android.secsoundpicker
-
-null
-
-Phone
-com.samsung.android.dialer
-com.samsung.android.dialer.DialtactsActivity
-
-Samsung Location SDK
-com.sec.location.nsflp2
-
-null
-
-MDMApp
-com.samsung.android.mdm
-
-null
-
-Separate app sound
-com.samsung.android.setting.multisound
-
-null
-
-Clock style
-com.samsung.android.app.clockpack
-
-null
-
-Recommended apps
-com.samsung.android.app.omcagent
-
-null
-
-Tools
-com.sec.android.app.quicktool
-
-null
-
-Certificate installer
-com.android.certinstaller
-
-null
-
-Automation Test
-com.sec.android.app.DataCreate
-
-null
-
-ImsLogger
-com.sec.imslogger
-
-null
-
-MTP application
-com.samsung.android.mtp
-
-null
-
-Permission usage
-com.samsung.android.privacydashboard
-
-null
-
-NetworkStackOverlay
-com.samsung.android.networkstack
-
-null
-com.google.android.overlay.gmsconfig.photos
-com.google.android.overlay.gmsconfig.photos
-
-null
-
-Download Manager
-com.android.providers.downloads
-
-null
-
-Nearby device scanning
-com.samsung.android.easysetup
-
-null
-
-Media picker
-com.google.android.providers.media.module
-
-null
-
-Configuration update
-com.samsung.android.sdm.config
-
-null
-
-Foundation
-com.monotype.android.font.foundation
-
-null
-
-Samsung Kids Installer
-com.samsung.android.kidsinstaller
-
-null
-
-Tall cutout
-com.android.internal.display.cutout.emulation.tall
-
-null
-com.google.android.overlay.modules.modulemetadata.forframework
-com.google.android.overlay.modules.modulemetadata.forframework
-
-null
-
-DRParser Mode
-com.sec.android.app.parser
-
-null
-com.android.cts.priv.ctsshim
-com.android.cts.priv.ctsshim
-
-null
-
-Sound quality and effects
-com.sec.android.app.soundalive
-
-null
-com.google.android.overlay.modules.ext.services
-com.google.android.overlay.modules.ext.services
-
-null
-
-Downloads
-com.android.providers.downloads.ui
-
-null
-
-Blocked Numbers Storage
-com.android.providers.blockednumber
-
-null
-
-EasyOneHand
-com.sec.android.easyonehand
-
-null
-
-Gestural Navigation Bar
-com.android.internal.systemui.navbar.gestural
-
-null
-
-android.auto_generated_rro_product__
-
-android.auto_generated_rro_product__
-
-null
-
-Gallery
-com.samsung.android.widget.pictureframe
-
-null
-
-Gmail
-com.google.android.gm
-com.google.android.gm.ConversationListActivityGmail
-
-Ultra data saving mode
-com.samsung.android.uds
-
-null
-
-HandwritingService
-com.samsung.android.sdk.handwriting
-
-null
-
-ShortcutBNR
-com.samsung.android.shortcutbackupservice
-
-null
-
-Wearable Manager Installer
-com.samsung.android.app.watchmanagerstub
-
-null
-
-Digital Wellbeing
-com.samsung.android.forest
-
-null
-
-WcmUrlsNetworkStackOverlay
-com.samsung.android.wcmurlsnetworkstack
-
-null
-
-Google Wi-Fi Provisioner
-com.google.android.apps.carrier.carrierwifi
-
-null
-
-CameraExtensionsProxy
-com.android.cameraextensions
-
-null
-"""
-
-all_line = text.splitlines()
-# print(all_line)
-
-for lines in all_line:
-    if not lines.startswith("com."):
-        formatted_text += "\n"
-    
-    formatted_text += f"\n{lines}"
-print(formatted_text)
-
-# after you build formatted_text
-with open(r"C:\Users\Wei Jie\AppData\Local\Python\apps_list.txt", "w", encoding="utf-8") as f:
-    f.write(formatted_text)
-
