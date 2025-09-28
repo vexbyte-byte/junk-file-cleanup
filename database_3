@@ -133,4 +133,7 @@ data = [
     # YouTube,
     'com.google.android.youtube',
     'com.google.android.youtube.app.honeycomb.Shell$HomeActivity',
+    # X 
+    'com.twitter.android',
+    'com.twitter.android.StartActivity',
 ]
