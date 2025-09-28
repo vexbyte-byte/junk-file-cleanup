@@ -168,7 +168,10 @@ class engine():
         total_items = int(len(directory_list))
 
         # delete files
-        for directory in files_list:
+        for directory in files_list:              
+            # format screen
+            utils.clear_screen()
+            utils.logo()
             progress += 1
             now = datetime.now()
             formatted_time = now.strftime("%H:%M:%S")
@@ -180,7 +183,7 @@ class engine():
             
             try:
                 os.remove(directory)
-                print(f"{b_green}[{d_yellow}{formatted_time}{b_green}] Successfully Removed: {directory[-var_4:]}")
+                print(f"{b_green}[{d_yellow}{formatted_time}{b_green}] Successfully Removed: {directory[-var_4:]}", flush=True)
                 file_deleted_count += 1
             except Exception as e:
                 print(f"{red}[{formatted_time}] ", e)
@@ -199,13 +202,12 @@ class engine():
                 
             except Exception as e:
                 print(f"{red}[{formatted_time}] ", e)
-                        
-            # format screen
-            utils.clear_screen()
-            utils.logo()
 
         # Delete folders
         for directory in folders_list:
+            # format screen
+            utils.clear_screen()
+            utils.logo()
             progress += 1
             now = datetime.now()
             formatted_time = now.strftime("%H:%M:%S")
@@ -216,7 +218,7 @@ class engine():
 
             try:
                 shutil.rmtree(directory)
-                print(f"{b_green}[{d_yellow}{formatted_time}{b_green}] Successfully Removed Empty Dir: {directory[-var_4:]}")
+                print(f"{b_green}[{d_yellow}{formatted_time}{b_green}] Successfully Removed Empty Dir: {directory[-var_4:]}", flush=True)
                 folder_deleted_count += 1
             except Exception as e:
                 print(f"{red}[{formatted_time}] ", e)
@@ -235,10 +237,6 @@ class engine():
                 
             except Exception as e:
                 print(f"{red}[{formatted_time}] ", e)
-            
-            # format screen
-            utils.clear_screen()
-            utils.logo()
 
         print(f"\n{d_green}[+]{b_green} Cleanup Complete!\n")
 
@@ -270,9 +268,9 @@ class engine():
         for package_name in data:
             progress += 1
             utils.clear_screen()
-            print(f"{d_green}[*]{b_green} clearing data for: ", package_name)
+            print(f"{d_green}[*]{b_green} clearing data for: ", package_name, flush=True)
             percentage = progress / total_app * 100
-            print(f"\n\n{b_green}Percentage: {int(round(percentage))}%")
+            print(f"\n\n{b_green}Percentage: {int(round(percentage))}%", flush=True)
             subprocess.run(["adb", "shell", "pm", "clear", package_name])
         print(f"\n\n{d_green}[+]{b_green} Cleanup Complete!")
 
