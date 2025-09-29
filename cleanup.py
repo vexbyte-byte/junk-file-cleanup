@@ -14,6 +14,8 @@ b_green = "\033[92m"
 d_green = "\033[32m"
 b_yellow = "\033[93m"
 d_yellow = "\033[33m"
+purple = "\033[95m"
+blue = "\033[34m"
 
 file_deleted_count = 0
 folder_deleted_count = 0
@@ -56,6 +58,9 @@ class utils():
             print(f"{b_green}[{d_yellow}02{b_green}]{d_green} Search for broken directories in database")
             print(f"{b_green}[{d_yellow}03{b_green}]{d_green} Remove junk files")
             print(f"{b_green}[{d_yellow}04{b_green}]{d_green} Clear App Data Recursively (ADB)")
+            print(f"{b_green}[{d_yellow}05{b_green}]{d_green} Clear System-Wide Cache")
+            print(f"{b_green}[{d_yellow}06{b_green}]{d_green} Connect ADB to phone. (Wireless)")
+            print(f"{b_green}[{d_yellow}07{b_green}]{d_green} Disconnect ADB to phone (Wireless)")
             print(red)
             print()
             choice = str(input(f"[Main Menu] > {d_yellow}"))
@@ -70,8 +75,10 @@ class utils():
                 "2": engine.detect_directories,
                 "3": engine.main,
                 "4": engine.clear_app_data,
+                "5": engine.clear_cache_system_wide,
+                "6": ADB_Api.pair_ADB,
+                "7": ADB_Api.disconnect_ADB,
             }
-
             try:
                 value = options.get(choice)
                 value()
@@ -273,6 +280,13 @@ class engine():
             print(f"\n\n{b_green}Percentage: {int(round(percentage))}%", flush=True)
             subprocess.run(["adb", "shell", "pm", "clear", package_name])
         print(f"\n\n{d_green}[+]{b_green} Cleanup Complete!")
+    
+    def clear_cache_system_wide():
+        # command: pm trim-caches 0
+        result = subprocess.run(["adb", "shell", "pm", "trim-caches", "0"], capture_output=True, text=True, check=True, shell=True)
+        print(result.stdout)
+        print(result.stderr)
+        print(f"{d_green}[+]{b_green} Cache Cleanup Complete!")
 
 class github_Api():
     global directory_list
@@ -286,12 +300,135 @@ class github_Api():
         except Exception as e: print(f"{red}[!] ", e)
         exec(contents, globals())
 
+class ADB_Api():
+    def see_if_client_is_online():
+        try:
+            # capture_output=True requires Python 3.7+
+            result = subprocess.run(
+                ["adb", "devices"],
+                capture_output=True, text=True, check=True
+            )
+        except subprocess.CalledProcessError:
+            return False  # adb itself failed
+        except FileNotFoundError:
+            raise RuntimeError(f"{red}[!] adb not found in PATH")
+        except Exception as e:
+            print(f"{red}[!] ", e) # wide range of exception
+
+        # Lines after the header list devices: "<serial>\t<state>"
+        for line in result.stdout.splitlines()[1:]:
+            if line.strip() and "\tdevice" in line:
+                return True
+        print(f"\n{red}[!] Failed to connect ADB to Phone.")
+        print("-" * 35)
+        print("Debug Steps:")
+        print(" - Make sure USB is Connected from PC to Phone.")
+        print(" - Make sure Phone is on WIFI mode.")
+        print(" - Make sure USB Debugging is Enabled.")
+        print(" - Make Sure there is Only 1 Devices on the USB.")
+        print("\nPlease try again after fixing these issues.")
+        return False
+
+    def get_phone_ip():
+        # get local IP
+        # Example usage:
+        try:
+            if ADB_Api.see_if_client_is_online():
+                raw_result = subprocess.run(r"adb shell ip route", capture_output=True, text=True, check=True, shell=True)
+                result = raw_result.stdout
+                # error = raw_result.stderr
+                # print(error) # debug mode
+                parts = result.split()
+                # filter IP
+                if "src" in parts:
+                    idx = parts.index("src")
+                    ip_after_src = parts[idx + 1]
+                    print(ip_after_src)
+                    return ip_after_src   # -> 192.168.1.103
+                else:
+                    return "ADB_Connection_Error"
+            else:
+                raise ConnectionError()
+        except ConnectionError as e:
+            # error already specified on top
+            pass
+        except Exception as e:
+            print(f"{red}[!] ", e)
+        
+        
+    
+    def pair_ADB():
+        try:
+            if ADB_Api.see_if_client_is_online():
+            
+                # get ip of phone
+                phone_ip = ADB_Api.get_phone_ip()
+                utils.clear_screen()
+                utils.logo()
+                result = subprocess.run(["adb", "tcpip", "5555"], capture_output=True, text=True, check=True)
+                print(result.stdout)
+                result = subprocess.run(fr"adb connect {phone_ip}:5555", capture_output=True, text=True, check=True, shell=True)
+                print(result.stdout)
+                print(result.stderr)
+                print(f"{d_green}[+]{b_green} Successfully Connected ADB to Phone.")
+            else:
+                raise ConnectionError("An Error Occured.")
+
+        except ConnectionError as e:
+            # error already specified on top
+            pass
+        except Exception as e:
+            print(f"{red}[!] ", e)
+
+    
+    def disconnect_ADB():
+        phone_ip = ADB_Api.get_phone_ip()
+        try:
+            result = subprocess.run(
+                fr"adb disconnect {phone_ip}:5555",
+                capture_output=True,
+                text=True,
+                check=True,
+                shell= True
+            )
+            print(result.stdout)
+            print(result.stderr)
+            result = subprocess.run(
+                r"adb kill-server",
+                capture_output=True,
+                text=True,
+                check=True,
+                shell= True
+            )
+            print(result.stdout)
+            print(result.stderr)
+            result = subprocess.run(
+                r"adb usb",
+                capture_output=True,
+                text=True,
+                check=True,
+                shell= True
+            )
+            print(result.stdout)
+            print(result.stderr)
+            # print
+            print(f"\n{d_green}[+]{b_green} Successfully Ejected phone from ADB.")
+        except Exception as e:
+            utils.clear_screen()
+            utils.logo()
+            print(f"{red}[!]", e)
+            print("\n[!] Failed to disconnect ADB to Phone.")
+            print("-" * 38)
+            print("Debug Steps:")
+            print(" - Make Sure ADB is Already Connected to Phone.")
+            print(" - Make Sure USB is disconnected to Phone/PC.")
+            print("\nPlease try again after fixing these issues.")
 
 if __name__ == "__main__":
+    # ADB_Api.report()
     utils.clear_screen()
     print(f"{d_yellow}[{red}!{d_yellow}] Initializing")
     github_Api.get_and_run_database('https://raw.githubusercontent.com/vexbyte-byte/junk-file-cleanup/refs/heads/main/database_1')
     github_Api.get_and_run_database('https://raw.githubusercontent.com/vexbyte-byte/junk-file-cleanup/refs/heads/main/database_3')
     utils.clear_screen()
     utils.selection()
-
